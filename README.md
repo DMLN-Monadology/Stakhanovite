@@ -4,9 +4,9 @@
 
 Stakhanovite is a web application for project & team management, built on Rails, React.js and the Redux framework, inspired by the Stakhanovite Movement. The core features of Stakhanovite will include:
 
-- [] Create an account
-- [] Log in / Log out
-- [] Creation, distribution, augmentation, and deletion of boards, lists, cards, comments and due dates
+- [ ] Create an account
+- [ ] Log in / Log out
+- [ ] Creation, distribution, augmentation, and deletion of boards, lists, cards, comments and due dates
 
 ## Design Docs
 * [View Wireframes][view]
