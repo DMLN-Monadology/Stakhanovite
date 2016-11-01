@@ -13,16 +13,19 @@
   + BoardIndex
 
 **BoardContainer**
- - Navbar
  - ListIndex
   + List
-  + ItemIndex
+
+**ListContainer**
+ - ItemIndex
 
 **ItemContainer**
- - Navbar
  - Item
  + Description
  + CommentsIndex
+
+**CommentContainer**
+ - CommentsIndex
 
 ## Routes
 

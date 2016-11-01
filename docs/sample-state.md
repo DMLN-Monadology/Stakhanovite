@@ -34,12 +34,12 @@
       1: {
         id: 1,
         name: "Incomplete MVP Features",
-        ItemIndex: [Boards, Lists & Cards, Sharing Boards, etc...]
+        ItemIndex: [Index of item by id]
       }
       2: {
         id: 2,
         name: "MVP Features to Review",
-        ItemIndex: []
+        ItemIndex: [Index of item by id]
       }
     }
   },
