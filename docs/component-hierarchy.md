@@ -25,7 +25,7 @@
  + CommentsIndex
 
 **CommentContainer**
- - CommentsIndex
+ - Comment
 
 ## Routes
 
