@@ -1,0 +1,32 @@
+SIGNUP:
+
+$.ajax({
+url: "api/user",
+method: "POST",
+data: {
+  user: {
+    username: "Rokossovsky",
+    password: "Byelorussia"
+      }
+  }
+});
+
+LOGIN:
+
+$.ajax({
+url: "api/session",
+method: "POST",
+data: {
+  user: {
+    username: "Rokossovsky",
+    password: "Byelorussia"
+      }
+  }
+});
+
+LOGOUT:
+
+$.ajax({
+url: "api/session",
+method: "DELETE"
+});
