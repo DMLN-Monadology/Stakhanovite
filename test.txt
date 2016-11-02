@@ -30,3 +30,29 @@ $.ajax({
 url: "api/session",
 method: "DELETE"
 });
+
+
+*********Testing api_utils on windows
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import {signup, signin, signout} from './util/session_api_util';
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  window.success = () => {return console.log("success!");};
+  window.error = () => {return console.log("failure!");};
+  window.params = {
+      username: "Rokossovsky",
+      password: "Byelorussia"
+  }
+
+  const root = document.getElementById('root');
+  ReactDOM.render(<h1>Welcome to Stakhanovite, under Construction</h1>, root);
+
+
+  window.signup = signup;
+  window.signin = signin;
+  window.signout = signout;
+});
