@@ -5,6 +5,8 @@ import {SIGN_IN,
         receiveErrors
 } from '../actions/session_actions';
 
+import {hashHistory} from 'react-router'
+
 import { signin, signup, signout } from '../util/session_api_util';
 
 const SessionMiddleware = store => next => action => {
@@ -20,7 +22,10 @@ const SessionMiddleware = store => next => action => {
       signin(action.user, successCallback, errorCallback)
       return next(action);
     case SIGN_OUT:
-      signout( () => next(action));
+      signout( () => {
+        hashHistory.push("/");
+        next(action)
+        });
       break;
     default:
       return next(action);
