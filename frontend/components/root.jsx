@@ -28,9 +28,9 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}/>
-        <Route path="/boards" component={BoardsContainer} onEnter={_ensureSignedIn} />
-        <Route path="/signin" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />
-        <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />
+          <Route path="/boards" component={BoardsContainer} onEnter={_ensureSignedIn} />
+          <Route path="/signin" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />
+          <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />
       </Router>
     </Provider>
   );
