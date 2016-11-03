@@ -12,13 +12,29 @@ const SessionLinks = () => (
   </ul>
 );
 
-const Home = () => (
-  <div className="homeHeader">
-    <div className="logo">
-      Stakhanovites
-    </div>
-    <SessionLinks />
+const WelcomeMessage = () => (
+  <div className="homeBody">
+    <h2>
+      Stakhanovites lets you work more collaboratively and get more done.
+    </h2>
+    <p>
+      Stakhanovites's boards, lists, and cards enable you to organize and prioritize
+      projects in a fun, flexible, and rewarding way.
+    </p>
   </div>
+);
+
+const Home = () => (
+  <div className="homePage">
+    <div className="homeHeader">
+      <div className="logo">
+        Stakhanovites
+      </div>
+      <SessionLinks />
+    </div>
+    <WelcomeMessage />
+  </div>
+
 );
 
 

@@ -9,7 +9,7 @@
 }
 
 .homeHeader {
-  background-color: #0099FF;
+  background-color: #0065B4;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +24,7 @@ ul.signin_signup {
 }
 
 .signin_signup .signinButton {
-  background-color: #0066CC;
+  background-color: #005494;
   box-shadow: 0 2px 0 rgba(0,0,0,0.3);
   margin: 0px 4px 0px;
   padding: 11.2px 20.8px;
@@ -49,7 +49,7 @@ ul.signin_signup {
 }
 
 .signin_signup .signupButton {
-  background-color: #339933;
+  background-color: #4EAB33;
   box-shadow: 0 2px 0 rgba(0,0,0,0.3);
   margin: 0px 4px 0px;
   padding: 11.2px 20.8px;

@@ -1,0 +1,23 @@
+.homeBody {
+  background-color: #EAEAEA;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+
+.homeBody h2 {
+  margin: 0 auto;
+  color: blue;
+  text-align: center;
+  width: 300px;
+}
+
+.homeBody p {
+  margin: 0 auto;
+  width: 300px;
+  color: teal;
+  text-align: center;
+}
