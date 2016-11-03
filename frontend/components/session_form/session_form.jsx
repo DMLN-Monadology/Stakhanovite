@@ -70,10 +70,8 @@ class SessionForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           Become a Stakhanovite!
-          <br/>
           Please {this.props.formType} or {this.navLinks()}
           <div>
-            <br/>
             <label> Username:
               <input
                 type="text"
@@ -81,7 +79,6 @@ class SessionForm extends React.Component {
                 onChange={this.update("username")}
                 />
             </label>
-            <br/>
             <label> Password:
               <input
                 type="password"
@@ -89,7 +86,6 @@ class SessionForm extends React.Component {
                 onChange={this.update("password")}
                 />
             </label>
-            <br/>
             <input type="submit" value = "Submit" />
           </div>
         </form>
