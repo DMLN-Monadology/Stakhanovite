@@ -38,8 +38,7 @@ class Home extends React.Component {
         Stakhanovites lets you work more collaboratively and get more done.
       </h2>
       <p>
-        Stakhanovites's boards, lists, and cards enable you to organize and prioritize
-        projects in a fun, flexible, and rewarding way.
+        Stakhanovites' boards, lists, and cards enable you to organize and prioritize projects in a fun, flexible, and rewarding way.
       </p>
       <button onClick={this.handleGuestSubmit} className="GuestButton">Guest</button>
     </div>
