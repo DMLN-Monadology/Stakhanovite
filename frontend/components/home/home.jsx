@@ -2,14 +2,18 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const SessionLinks = () => (
-  <nav className="signin_signup">
-    <Link to= "/signin">Sign in</Link>
-    <Link to= "/signup">Sign up</Link>
-  </nav>
+  <ul className="signin_signup">
+    <li className="signinButton">
+      <Link to= "/signin">Sign In</Link>
+    </li>
+    <li className="signupButton">
+      <Link to= "/signup">Sign Up</Link>
+    </li>
+  </ul>
 );
 
 const Home = () => (
-  <div>
+  <div className="homeHeader">
     <div className="logo">
       Stakhanovites
     </div>

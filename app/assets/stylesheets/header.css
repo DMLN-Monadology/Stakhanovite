@@ -1,14 +1,65 @@
 .logo {
   font-size: 24px;
-  
+  width: 200px;
+  display: flex;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  margin-left: 10px;
 }
 
 .homeHeader {
-  background-color: red;
+  background-color: #0099FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
-.signin_signup {
+ul.signin_signup {
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
 
-  color: #fff;
+.signin_signup .signinButton {
+  background-color: #0066CC;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  margin: 0px 4px 0px;
+  padding: 11.2px 20.8px;
+  width: 50.547px;
+  height: 17px;
+  color: white;
+  border-radius: .4em;
+}
+
+.signin_signup .signinButton a {
+  font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.signin_signup .signupButton a {
+  font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.signin_signup .signupButton {
+  background-color: #339933;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  margin: 0px 4px 0px;
+  padding: 11.2px 20.8px;
+  width: 60.547px;
+  height: 17px;
+  color: white;
+  border-radius: .4em;
+  text-decoration-color: white;
+}
+
+:link {
+  text-decoration: none;
 }
