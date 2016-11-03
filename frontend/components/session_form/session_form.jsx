@@ -8,18 +8,12 @@ class SessionForm extends React.Component {
       username: "", password: ""
     };
   this.handleSubmit = this.handleSubmit.bind(this);
-  this.handleGuestSubmit = this.handleSubmit.bind(this);
 
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.props.processForm(this.state)
-  }
-
-  handleGuestSubmit(event){
-    event.preventDefault();
-    this.props.processForm({username:"Alexey_Stakhanov", password:"Guest123"});
   }
 
   update(field) {
@@ -87,7 +81,6 @@ class SessionForm extends React.Component {
           </div>
         </form>
         {this.renderErrors()}
-        <button onClick={this.handleGuestSubmit}>Guest</button>
       </div>
     );
   }
