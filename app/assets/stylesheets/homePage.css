@@ -1,3 +1,8 @@
 .homePage{
   display: block;
+  background: url(http://res.cloudinary.com/dmuuruew8/image/upload/b_rgb:7097e3,e_hue:80,o_15,q_100,r_0/v1478194601/Stakhanov_c8nemk.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

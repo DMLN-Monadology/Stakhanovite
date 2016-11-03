@@ -8,8 +8,9 @@ class SessionForm extends React.Component {
       username: "", password: ""
     };
   this.handleSubmit = this.handleSubmit.bind(this);
-
+  this.switchForms = this.switchForms.bind(this);
   }
+
 
   handleSubmit(event) {
     event.preventDefault();
@@ -32,13 +33,25 @@ class SessionForm extends React.Component {
     }
   }
 
-  navLink() {
+  switchForms(event) {
+    event.preventDefault();
+    this.props.clearErrors();
     if (this.props.formType === "signin") {
-      return <Link to= "/signup">Sign Up instead</Link>
+      this.props.router.push("/signup")
     } else {
-      return <Link to = "/signin">Sign In instead</Link>
+      this.props.router.push("/signin")
     }
-  }
+  };
+
+  navLinks() {
+    if (this.props.formType === "signin") {
+      return <a onClick={this.switchForms}>Sign Up</a>
+    }else{
+      return <a onClick={this.switchForms}>Sign In</a>
+    }
+  };
+
+
 
   renderErrors() {
     return (
@@ -58,7 +71,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           Become a Stakhanovite!
           <br/>
-          Please {this.props.formType} or {this.navLink()}
+          Please {this.props.formType} or {this.navLinks()}
           <div>
             <br/>
             <label> Username:
