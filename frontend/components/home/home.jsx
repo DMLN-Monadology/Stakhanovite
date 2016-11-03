@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+const guest = {username: "Alexey_Stakhanov", password: "Guest123" };
+
+
 const SessionLinks = () => (
   <ul className="signin_signup">
     <li className="signinButton">
@@ -23,6 +26,7 @@ const WelcomeMessage = () => (
     </p>
   </div>
 );
+
 
 const Home = () => (
   <div className="homePage">

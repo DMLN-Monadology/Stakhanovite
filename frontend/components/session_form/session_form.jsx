@@ -8,11 +8,18 @@ class SessionForm extends React.Component {
       username: "", password: ""
     };
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleGuestSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.props.processForm(this.state)
+  }
+
+  handleGuestSubmit(event){
+    event.preventDefault();
+    this.props.processForm({username:"Alexey_Stakhanov", password:"Guest123"});
   }
 
   update(field) {
@@ -58,7 +65,6 @@ class SessionForm extends React.Component {
           Become a Stakhanovite!
           <br/>
           Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors}
           <div>
             <br/>
             <label> Username:
@@ -80,6 +86,8 @@ class SessionForm extends React.Component {
             <input type="submit" value = "Submit" />
           </div>
         </form>
+        {this.renderErrors()}
+        <button onClick={this.handleGuestSubmit}>Guest</button>
       </div>
     );
   }

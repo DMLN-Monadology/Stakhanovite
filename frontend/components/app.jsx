@@ -1,9 +1,9 @@
 import React from 'react';
-import Home from './home/home'
+import HomeContainer from './home/home_container'
 
 const App = ({children}) => (
   <div>
-    <Home/>
+    <HomeContainer/>
 
     {children}
   </div>
