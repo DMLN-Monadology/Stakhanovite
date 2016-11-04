@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import BoardsContainer from './boards/board_container';
+import NavBarContainer from './navbar/navbar_container';
 
 
 
@@ -28,7 +29,9 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} />
-          <Route path="/boards" component={BoardsContainer} onEnter={_ensureSignedIn} />
+          <Route path="/navbar" component={NavBarContainer} onEnter={_ensureSignedIn}>
+            <Route path="/boards" component={BoardsContainer} onEnter={_ensureSignedIn} />
+          </Route>
           <Route path="/signin" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />
       </Router>
