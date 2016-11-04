@@ -13,7 +13,7 @@ class Home extends React.Component {
 
   handleGuestSubmit(event){
     event.preventDefault();
-    let randomAccount = Math.floor(Math.random() * (30 - 0 + 1))
+    let randomAccount = Math.floor(Math.random() * (28 - 0 + 1))
     this.props.guestSignIn({username: this.guestAccounts[randomAccount], password:"Guest123"});
     this.props.router.push("/boards");
   }
