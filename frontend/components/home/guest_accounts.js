@@ -16,8 +16,6 @@ const guestAccounts = () => (
   "Markian_Popov",
   "Kliment_Voroshilov",
   "Ivan_Fedyuninsky",
-  "Mikhail_Khozin",
-  "Leonid_Govorov",
   "Nikolay_Voronov",
   "Andrey_Yeryomenko",
   "Vasily_Chuikov",

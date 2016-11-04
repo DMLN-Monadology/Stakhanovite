@@ -3,6 +3,26 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: true
 
+  has_many(
+    :owned_boards,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "Board"
+  )
+
+  has_many(
+    :memberships,
+    primary_key: :id,
+    foreign_key: :member_id,
+    class_name: "BoardMembership"
+  )
+
+  has_many(
+    :member_boards,
+    through: :memberships,
+    source: :board
+  )
+
   attr_reader :password
 
   after_initialize :ensure_session_token
