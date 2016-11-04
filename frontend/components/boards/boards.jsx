@@ -8,6 +8,8 @@ const Boards = (props) => (
     <p>
       Username: {props.currentUser.username}
       <br/>
+      Boards: {props.currentUser.owned_boards.length}
+      <br/>
       <img src={props.currentUser.image_url}/>
     </p>
     <br/>

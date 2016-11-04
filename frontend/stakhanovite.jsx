@@ -4,15 +4,22 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import {createBoard, updateBoard, deleteBoard} from './util/board_api_util';
+import {createBoard} from './actions/board_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  window.success = () => {return console.log("success!");};
-  window.error = () => {return console.log("failure!");};
-  window.params = {
-      owner_id: 200,
-      title: "1st Byelorussian Front"
+
+  window.params1 = {
+      owner_id: 191,
+      title: "Russian SSR"
+  }
+  window.params2 = {
+      owner_id: 191,
+      title: "Ukrainian SSR"
+  }
+  window.params3 = {
+      owner_id: 191,
+      title: "Byelorussian SSR"
   }
 
   let store;
@@ -29,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store
 
   window.createBoard = createBoard;
-  window.updateBoard = updateBoard;
-  window.deleteBoard = deleteBoard;
+
 
 });
