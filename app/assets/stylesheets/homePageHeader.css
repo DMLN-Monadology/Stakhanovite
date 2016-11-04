@@ -9,55 +9,62 @@
 }
 
 .homeHeader {
-  background-color: #005194;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 
-ul.signin_signup {
+.signin_signup {
   width: 300px;
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
 }
 
-.signin_signup .signinButton {
+.signinButton {
   background-color: #08599A;
   box-shadow: 0 2px 0 rgba(0,0,0,0.3);
-  margin: 0px 4px 0px;
+  margin: 10px 10px 0px;
   padding: 11.2px 20.8px;
   width: 50.547px;
   height: 17px;
   color: white;
   border-radius: .4em;
-}
-
-.signin_signup .signinButton a {
   font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
   color: white;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
+  filter: brightness(150%);
+  transition: background-color 0.5s ease;
 }
 
-.signin_signup .signupButton a {
-  font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+
+
+.signinButton:hover {
+  background-color: #014679;
 }
 
-.signin_signup .signupButton {
-  background-color: #4EAB33;
+
+.signupButton {
+  background-color: #33CC33;
   box-shadow: 0 2px 0 rgba(0,0,0,0.3);
-  margin: 0px 15px 0px 6px;
+  margin: 10px 15px 0px 6px;
   padding: 11.2px 20.8px;
   width: 60.547px;
   height: 17px;
   color: white;
   border-radius: .4em;
   text-decoration-color: white;
+  font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+
+.signupButton:hover {
+  background-color: #4AA631;
 }
 
 :link {

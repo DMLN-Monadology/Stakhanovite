@@ -9,8 +9,16 @@ class SessionForm extends React.Component {
     };
   this.handleSubmit = this.handleSubmit.bind(this);
   this.switchForms = this.switchForms.bind(this);
+  this.workingTitle = this.workingTitle.bind(this);
   }
 
+  workingTitle() {
+    if (this.props.formType === "signin") {
+      return "Sign In"
+    }else{
+      return "Sign Up"
+    };
+  };
 
   handleSubmit(event) {
     event.preventDefault();
@@ -45,13 +53,19 @@ class SessionForm extends React.Component {
 
   navLinks() {
     if (this.props.formType === "signin") {
-      return <a onClick={this.switchForms}>Sign Up</a>
+      return <a onClick={this.switchForms}>Create a Stakhanovites account.</a>
     }else{
       return <a onClick={this.switchForms}>Sign In</a>
     }
   };
 
-
+  navLinksMessage() {
+    if (this.props.formType === "signin") {
+      return <p>Don't have an account?</p>
+    }else{
+      return <p>Already have an account?</p>
+    }
+  }
 
   renderErrors() {
     return (
@@ -67,29 +81,36 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="SessionForm">
+        <header>
+          {this.workingTitle()} to Stakhanovites
+        </header>
         <form onSubmit={this.handleSubmit}>
-          Become a Stakhanovite!
-          Please {this.props.formType} or {this.navLinks()}
-          <div>
-            <label> Username:
+            <label className="FormElement"> Username
               <input
+                placeholder="e.g., alexey@shockworker.xyz"
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
                 />
             </label>
-            <label> Password:
+
+            <label className="FormElement"> Password
               <input
+                placeholder="e.g., ************"
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
                 />
             </label>
-            <input type="submit" value = "Submit" />
-          </div>
+
+            <input type="submit" value ={this.workingTitle()} className="submitButton" />
         </form>
         {this.renderErrors()}
+        <div className="FormSwapGroup">
+          {this.navLinksMessage()}
+          {this.navLinks()} 
+        </div>
       </div>
     );
   }

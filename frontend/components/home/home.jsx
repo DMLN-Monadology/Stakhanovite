@@ -21,21 +21,17 @@ class Home extends React.Component {
 
   SessionLinks() {
     return (
-    <ul className="signin_signup">
-      <li className="signinButton">
-        <Link to= "/signin">Sign In</Link>
-      </li>
-      <li className="signupButton">
-        <Link to= "/signup">Sign Up</Link>
-      </li>
-    </ul>
+    <div className="signin_signup">
+        <Link to= "/signin" className="signinButton">Sign In</Link>
+        <Link to= "/signup" className="signupButton">Sign Up</Link>
+    </div>
   )}
 
  WelcomeMessage() {
    return (
     <div className="homeBody">
       <h2>
-        Stakhanovites lets you work more collaboratively and get more done.
+        Stakhanovites enables you work more collaboratively and get more done.
       </h2>
       <p>
         Stakhanovites' boards, lists, and cards enable you to organize and prioritize projects in a fun, flexible, and rewarding way.
