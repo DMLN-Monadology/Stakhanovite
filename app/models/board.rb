@@ -1,10 +1,10 @@
 class Board < ApplicationRecord
-  validates :user_id, :title, presence: true
+  validates :owner_id, :title, presence: true
 
   belongs_to(
     :owner,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :owner_id,
     class_name: "User"
   )
 

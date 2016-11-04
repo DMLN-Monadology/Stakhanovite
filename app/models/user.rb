@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many(
     :owned_boards,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :owner_id,
     class_name: "Board"
   )
 
