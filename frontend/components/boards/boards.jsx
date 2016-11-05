@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 const Boards = (props) => (
   <div className="BoardsPage">
-    <h1>#Welcome to Boards#</h1>
     <p>
       Username: {props.currentUser.username}
       <br/>

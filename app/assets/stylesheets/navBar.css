@@ -1,0 +1,60 @@
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  background-color: #26519A;
+  height: 40px;
+  align-items: center;
+}
+
+.NBboardHeader{
+  cursor: pointer;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 28px;
+  transition: background-color 0.5s ease;
+  font-family: 'Norican';
+}
+
+.NBboardHeader:hover{
+  text-shadow: 0.4px 0.4px 0.4px #fff;
+ }
+
+.NBboardLink {
+  color: white;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 10px;
+  height: 30px;
+  border-radius: 4px;
+  vertical-align: center;
+  background-color: #327CB1;
+  width: 70px;
+  transition: background-color 0.5s ease;
+}
+
+.NBboardLink:hover {
+  filter: brightness(120%);;
+}
+
+.NBSignOut {
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  line-height: 25px;
+  text-align: center;
+  margin-right: 10px;
+  height: 30px;
+  border-radius: 4px;
+  vertical-align: center;
+  background-color: #327CB1;
+  width: 70px;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.NBSignOut:hover {
+  filter: brightness(120%);;
+}

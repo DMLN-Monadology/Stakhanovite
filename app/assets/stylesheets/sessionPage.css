@@ -84,3 +84,17 @@
   text-decoration: underline;
 
 }
+
+.SessionForm ul {
+  margin-top: 50px;
+}
+
+.SessionForm ul li {
+  font-size: 20px;
+  border: 0.1px solid red;
+  width: 375px;
+  background-color: #FAE8E6;
+  border-radius: 3px;
+  font-weight: 200;
+  padding: 10px 20px;
+}

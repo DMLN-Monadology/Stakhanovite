@@ -82,6 +82,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="SessionForm">
+        {this.renderErrors()}
         <header>
           {this.workingTitle()} to Stakhanovites
         </header>
@@ -106,10 +107,9 @@ class SessionForm extends React.Component {
 
             <input type="submit" value ={this.workingTitle()} className="submitButton" />
         </form>
-        {this.renderErrors()}
         <div className="FormSwapGroup">
           {this.navLinksMessage()}
-          {this.navLinks()} 
+          {this.navLinks()}
         </div>
       </div>
     );
