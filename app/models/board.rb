@@ -17,6 +17,14 @@ class Board < ApplicationRecord
   )
 
   has_many(
+    :lists,
+    primary_key: :id,
+    foreign_key: :board_id,
+    dependent: :destroy,
+    class_name: "List"
+  )
+
+  has_many(
     :members,
     through: :memberships,
     source: :member

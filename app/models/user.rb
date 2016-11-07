@@ -7,6 +7,7 @@ class User < ApplicationRecord
     :owned_boards,
     primary_key: :id,
     foreign_key: :owner_id,
+    dependent: :destroy, 
     class_name: "Board"
   )
 
