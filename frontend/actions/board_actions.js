@@ -8,8 +8,9 @@ export const createBoard = (board) => ({
   board
 });
 
-export const deleteBoard = () => ({
-  type: DELETE_BOARD
+export const deleteBoard = (id) => ({
+  type: DELETE_BOARD,
+  id
 });
 
 

@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import { signout } from '../../actions/session_actions';
-import Boards from './boards';
+import { createBoard, deleteBoard } from '../../actions/board_actions';
+import BoardsIndex from './boards_index';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  signout: () => dispatch(signout())
+  createBoard: (board) => dispatch(createBoard(board)),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Boards);
+)(BoardsIndex);
