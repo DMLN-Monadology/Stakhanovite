@@ -12,6 +12,7 @@ class Board < ApplicationRecord
     :memberships,
     primary_key: :id,
     foreign_key: :board_id,
+    dependent: :destroy
     class_name: "BoardMembership"
   )
 
