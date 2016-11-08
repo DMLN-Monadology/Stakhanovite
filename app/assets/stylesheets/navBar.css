@@ -38,23 +38,47 @@
   filter: brightness(120%);;
 }
 
-.NBSignOut {
-  font-size: 12px;
-  font-weight: bold;
+.NBright {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ProfileDD1 {
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+  height: 70%;
+  width: 30px;
+  color: black;
+  width: 40px;
   border: none;
-  color: white;
-  line-height: 25px;
-  text-align: center;
-  margin-right: 10px;
-  height: 30px;
-  border-radius: 4px;
-  vertical-align: center;
-  background-color: #327CB1;
-  width: 70px;
-  transition: background-color 0.5s ease;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #CBD0D3;
   cursor: pointer;
 }
 
-.NBSignOut:hover {
-  filter: brightness(120%);;
+.ProfileDD1:hover {
+  background-color: #B7BDC1;
+}
+
+.ProfileDD2 {
+  position: relative;
+  height: 70%;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #2A75AE;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.ProfileDD2:hover {
+  background-color: #5393C0;
 }

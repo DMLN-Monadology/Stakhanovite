@@ -10,15 +10,15 @@ import {createList} from './actions/list_actions';
 document.addEventListener('DOMContentLoaded', () => {
 
   window.params1 = {
-      board_id: 35,
+      board_id: 63,
       title: "Moscow"
   }
   window.params2 = {
-      board_id: 35,
+      board_id: 63,
       title: "Rostov on Don"
   }
   window.params3 = {
-      board_id: 35,
+      board_id: 63,
       title: "Leningrad"
   }
 

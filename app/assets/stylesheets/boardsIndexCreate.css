@@ -1,11 +1,16 @@
 .NewBoardBox {
+  position: absolute;
+  z-index: 10;
+  opacity: 1000%;
+  top: -4px;
+  left: -4px;
   border: 0.1px solid grey;
   border-radius: 5px;
   padding-right: 0% ;
   width: 250px ;
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  background-color: white;
 }
 
 .NewBoardHeader {
@@ -28,7 +33,7 @@
 .NewBoardHeader a {
   border-bottom: 0.1px solid grey;
   color: grey;
-  height: 25px;
+  height: 33px;
 }
 
 .NewBoardBox h4 {

@@ -1,0 +1,35 @@
+.ProfileDropDown {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  position: fixed;
+  width: 130px;
+  top: 40px;
+  right: 2px;
+  border: 1px solid #D6DADC;
+}
+
+.ProfileDropDown h2{
+  width: 95%;
+  text-align: center;
+  align-self: center;
+  color: grey;
+  border-bottom: 1px solid #D6DADC;
+  margin-bottom: 5px;
+}
+
+.ProfileDropDown button {
+  align-self: flex-start;
+  text-align: left;
+  color: black;
+  background-color: white;
+  transition: background-color 0.5s ease;
+  padding: 2px 0px 2px 5px;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.ProfileDropDown button:hover {
+  color: white;
+  background-color: #1A3F8A;
+}

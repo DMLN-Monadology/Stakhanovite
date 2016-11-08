@@ -34,8 +34,8 @@ const Root = ({ store }) => {
             <Route path="/boards" component={BoardsContainer} onEnter={_ensureSignedIn}>
               <Route path="/boards/show" component={NewBoardItemContainer} onEnter={_ensureSignedIn} >
                 <Route path="/boards/show/new" component={BoardFormContainer} onEnter={_ensureSignedIn}/>
+                <Route path ="/boards/controlpanel" component={ProfileDropDownContainer} onEnter={_ensureSignedIn} />
               </Route>
-              <Route path ="/boards/controlpanel" component={ProfileDropDownContainer} onEnter={_ensureSignedIn} />
             </Route>
           </Route>
           <Route path="/signin" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />

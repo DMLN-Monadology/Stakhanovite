@@ -11,15 +11,15 @@ const dropDownLink = () => {
 const NavBar = (props) => (
       <div>
         <div className="NavBar">
-          <Link to="/boards" className="NBboardLink">Boards</Link>
-          <Link to="/boards" className="NBboardHeader">Stakhanovites</Link>
-          <div>
+          <Link to="/boards/show" className="NBboardLink">Boards</Link>
+          <Link to="/boards/show" className="NBboardHeader">Stakhanovites</Link>
+          <div className="NBright">
 
-            <button onClick={dropDownLink()}>
+            <button onClick={dropDownLink()} className="ProfileDD1">
               {props.currentUser.username.slice(0,1)}
             </button>
 
-            <button onClick={dropDownLink()}>
+            <button onClick={dropDownLink()} className="ProfileDD2">
               {props.currentUser.username}
             </button>
           </div>
@@ -29,6 +29,3 @@ const NavBar = (props) => (
 );
 
 export default withRouter(NavBar);
-
-
-// <button onClick={props.signout} className="NBSignOut">Sign Out</button>
