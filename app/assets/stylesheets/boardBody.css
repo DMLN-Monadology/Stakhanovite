@@ -1,0 +1,46 @@
+.BoardBody {
+  background-color: #0062B4;
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
+}
+
+.BoardBodyHeader {
+  color: white;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.BoardIndexBody {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.BoardIndexBody ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-left: 10px;
+
+}
+
+.BoardIndexBody li {
+  width: 180px;
+  position: relative;
+  line-height: 20px;
+  display: block;
+}
+
+.ListIndexItem {
+  position: relative;
+  display: block;
+  color: black;
+  background-color: #DBDDE0;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

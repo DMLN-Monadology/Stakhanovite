@@ -4,8 +4,8 @@ import { Link, hashHistory } from 'react-router';
 
 
 const BoardsIndex = (props) => (
-  <div>
-    <h2 className="BoardsIndexHeaders">Your Boards</h2>
+  <div className="BoardsIndex">
+    <h2 className="BoardsIndexHeader">Your Boards</h2>
     <div className="BoardsIndexBody">
       <ul>
         {

@@ -49,8 +49,6 @@ const SessionMiddleware = store => next => action => {
       createBoard(action.board, boardSuccessCallback, testErrorCB)
       return next(action);
     case FETCH_BOARD:
-      console.log("made it to middleware");
-      console.log(action.id);
       fetchBoard(action.id, boardShowSuccessCallback);
       return next(action);
     default:

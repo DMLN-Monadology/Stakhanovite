@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ListIndexItem from './list_index_item';
 
 class Board extends React.Component {
   constructor(props) {
@@ -18,8 +18,23 @@ class Board extends React.Component {
 
   render() {
     return (
-    <div>
-      {this.props.board}
+    <div className="BoardBody">
+      <h2 className="BoardBodyHeader">
+        {this.current_board.title}
+      </h2>
+      <div className="BoardIndexBody">
+        <ul>
+          {
+            this.current_board.lists.map( list => (
+              <ListIndexItem
+                key={list.id}
+                list={list}
+                />
+            ))
+          }
+          {this.props.children}
+        </ul>
+      </div>
     </div>
   )}
 }

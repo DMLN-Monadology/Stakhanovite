@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
+import ProfileDropDownContainer from '../navbar_dropdowns/profile_dropdown_container';
 
 const dropDownLink = () => {
   return (event) => {
@@ -25,6 +26,7 @@ const NavBar = (props) => (
           </div>
         </div>
         {props.children}
+        <ProfileDropDownContainer/>
       </div>
 );
 

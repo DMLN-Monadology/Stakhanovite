@@ -97,7 +97,7 @@ $.ajax ({
   url: `api/lists`,
   method: "POST",
   data: { list: {
-      board_id: 63,
+      board_id: 67,
       title: "Moscow"
   }}
 });
