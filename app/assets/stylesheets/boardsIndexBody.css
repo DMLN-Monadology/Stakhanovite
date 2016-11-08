@@ -32,7 +32,16 @@
   margin-bottom: 2%;
   cursor: pointer;
   transition: background-color 0.5s ease;
-  padding: 10px 0% 0% 0px;
+  padding: 0px 0% 0% 0px;
+}
+
+.BoardIndexItem a {
+  position: absolute;
+  color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .BoardIndexItem:hover {

@@ -10,13 +10,15 @@ import {SIGN_IN,
 } from '../actions/session_actions';
 
 import { CREATE_BOARD,
-         receiveBoard
+         FETCH_BOARD,
+         receiveBoard,
+         receiveBoardShow
 } from '../actions/board_actions';
 
 
 //api utilities
 import { signin, signup, signout } from '../util/session_api_util';
-import {createBoard } from '../util/board_api_util';
+import {createBoard, fetchBoard } from '../util/board_api_util';
 
 
 const SessionMiddleware = store => next => action => {
@@ -25,6 +27,8 @@ const SessionMiddleware = store => next => action => {
   const userErrorCallback = (errors) => store.dispatch(receiveErrors(errors.responseJSON));
 
   const boardSuccessCallback = (board) => store.dispatch(receiveBoard(board));
+  const boardShowSuccessCallback = (board) => store.dispatch(receiveBoardShow(board));
+
   const testErrorCB = () => {return console.log("failure!");};
 
   switch(action.type){
@@ -37,13 +41,18 @@ const SessionMiddleware = store => next => action => {
     case SIGN_OUT:
       signout( () => {
         hashHistory.push("/");
-        next(action)
+        return next(action)
         });
       break;
     // Boards
     case CREATE_BOARD:
       createBoard(action.board, boardSuccessCallback, testErrorCB)
-      next(action);
+      return next(action);
+    case FETCH_BOARD:
+      console.log("made it to middleware");
+      console.log(action.id);
+      fetchBoard(action.id, boardShowSuccessCallback);
+      return next(action);
     default:
       return next(action);
   }

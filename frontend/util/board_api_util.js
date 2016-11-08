@@ -26,3 +26,11 @@ export const deleteBoard = (id, success, error) => {
     error
   });
 };
+
+export const fetchBoard = (id, success) => {
+  $.ajax ({
+    url: `api/boards/${id}`,
+    method: "GET",
+    success
+  });
+};

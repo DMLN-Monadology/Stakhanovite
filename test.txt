@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 *********Testing that actions dispatched will update states on windows
 run the commands store.dispatch(signup(params))
-run a faulty params to test the errors array 
+run a faulty params to test the errors array
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -90,3 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signin = signin;
   window.signout = signout;
 });
+
+**********AJAX test for list
+
+$.ajax ({
+  url: `api/lists`,
+  method: "POST",
+  data: { list: {
+      board_id: 63,
+      title: "Moscow"
+  }}
+});
+
+
+***********MISC
+
+const mapStateToProps = (state, { params }) => {
+  const boardId = parseInt(params.boardId);
+  return {
+    boardId
+  };
+};
+
+const mapStateToProps = (state, { params }) => {
+  const boardId = parseInt(params.boardId);
+  const owned_boards = state.session.currentUser.owned_boards;
+  let current_board = {};
+  for (let i = 0; i < owned_boards.length, i++) {
+    if (owned_boards[i].id === boardId) {
+      current_board = owned_boards[i];
+    };
+  };
+  return {
+    boardId,
+    current_board
+  };
+};

@@ -3,7 +3,7 @@ import {RECEIVE_CURRENT_USER,
         RECEIVE_ERRORS,
         SIGN_OUT} from '../actions/session_actions';
 
-import { RECEIVE_BOARD } from '../actions/board_actions';
+import { RECEIVE_BOARD, RECEIVE_BOARD_SHOW } from '../actions/board_actions';
 
 import { RECEIVE_LIST } from '../actions/list_actions';
 
@@ -16,6 +16,7 @@ const defaultState = Object.freeze({
 
 const SessionReducer = (oldState = defaultState, action) => {
   Object.freeze(oldState);
+  let newState
   switch(action.type) {
     //Users
     case RECEIVE_CURRENT_USER:
@@ -26,8 +27,11 @@ const SessionReducer = (oldState = defaultState, action) => {
       return merge({}, defaultState);
     //Boards
     case RECEIVE_BOARD:
-      let newState = merge({}, oldState);
+      newState = merge({}, oldState);
       newState.currentUser.owned_boards.push(action.board);
+      return newState;
+    case RECEIVE_BOARD_SHOW:
+      newState = merge({}, oldState, {["current_board"]: action.board});
       return newState;
     //Lists
     default:

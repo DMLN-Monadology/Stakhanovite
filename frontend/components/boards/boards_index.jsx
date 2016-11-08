@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardIndexItem from './board_index_item';
+import BoardIndexItem from './boards_index_item';
 import { Link, hashHistory } from 'react-router';
 
 
