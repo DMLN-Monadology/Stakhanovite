@@ -4,22 +4,22 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import {createBoard} from './actions/board_actions';
+import {createList} from './actions/list_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
   window.params1 = {
-      owner_id: 191,
-      title: "Russian SSR"
+      board_id: 35,
+      title: "Moscow"
   }
   window.params2 = {
-      owner_id: 191,
-      title: "Ukrainian SSR"
+      board_id: 35,
+      title: "Rostov on Don"
   }
   window.params3 = {
-      owner_id: 191,
-      title: "Byelorussian SSR"
+      board_id: 35,
+      title: "Leningrad"
   }
 
   let store;
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.store = store
 
-  window.createBoard = createBoard;
+  window.createList = createList;
 
 
 });

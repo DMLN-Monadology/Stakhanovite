@@ -7,7 +7,8 @@ import SessionFormContainer from './session_form/session_form_container';
 import BoardsContainer from './boards/board_container';
 import NavBarContainer from './navbar/navbar_container';
 import BoardFormContainer from './board_form/board_form_container';
-
+import ProfileDropDownContainer from './navbar_dropdowns/profile_dropdown_container';
+import NewBoardItemContainer from './boards/new_board_item_container';
 
 const Root = ({ store }) => {
 
@@ -31,7 +32,10 @@ const Root = ({ store }) => {
         <Route path="/" component={App} />
           <Route path="/navbar" component={NavBarContainer} onEnter={_ensureSignedIn}>
             <Route path="/boards" component={BoardsContainer} onEnter={_ensureSignedIn}>
-              <Route path ="/boards/new" component={BoardFormContainer} onEnter={_ensureSignedIn} />
+              <Route path="/boards/show" component={NewBoardItemContainer} onEnter={_ensureSignedIn} >
+                <Route path="/boards/show/new" component={BoardFormContainer} onEnter={_ensureSignedIn}/>
+              </Route>
+              <Route path ="/boards/controlpanel" component={ProfileDropDownContainer} onEnter={_ensureSignedIn} />
             </Route>
           </Route>
           <Route path="/signin" component={SessionFormContainer} onEnter={_redirectIfSignedIn} />

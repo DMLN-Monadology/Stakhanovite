@@ -1,7 +1,7 @@
 export const CREATE_BOARD = "CREATE_BOARD";
 export const DELETE_BOARD = "DELETE_BOARD";
 export const RECEIVE_BOARD = "RECEIVE_BOARD";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
 
 export const createBoard = (board) => ({
   type: CREATE_BOARD,
@@ -19,7 +19,7 @@ export const receiveBoard = (board) => ({
   board
 })
 
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+export const receiveBoardErrors = (errors) => ({
+  type: RECEIVE_BOARD_ERRORS,
   errors
 })

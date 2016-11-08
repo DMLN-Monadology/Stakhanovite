@@ -5,6 +5,8 @@ import {RECEIVE_CURRENT_USER,
 
 import { RECEIVE_BOARD } from '../actions/board_actions';
 
+import { RECEIVE_LIST } from '../actions/list_actions';
+
 import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({
@@ -24,10 +26,10 @@ const SessionReducer = (oldState = defaultState, action) => {
       return merge({}, defaultState);
     //Boards
     case RECEIVE_BOARD:
-      console.log("made it to reducer ... updating state");
       let newState = merge({}, oldState);
       newState.currentUser.owned_boards.push(action.board);
       return newState;
+    //Lists
     default:
       return oldState;
   }

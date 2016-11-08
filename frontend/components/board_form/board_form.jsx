@@ -14,7 +14,7 @@ class BoardForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createBoard(this.state)
-    this.props.router.push("/boards");
+    this.props.router.push("/boards/show");
   }
 
   update(field) {
@@ -29,7 +29,7 @@ class BoardForm extends React.Component {
 
         <div className="NewBoardHeader">
           <h3>Create Board</h3>
-          <Link to={`/boards/`}>x</Link>
+          <Link to={`/boards/show`}>x</Link>
         </div>
 
         <h4>Title</h4>
