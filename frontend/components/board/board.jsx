@@ -1,5 +1,6 @@
 import React from 'react';
 import ListIndexItem from './list_index_item';
+import ListForm from '../list_form/list_form';
 
 class Board extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Board extends React.Component {
     });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchBoard(this.props.params.boardId);
   }
 
@@ -32,7 +33,10 @@ class Board extends React.Component {
                 />
             ))
           }
-          {this.props.children}
+          <ListForm
+            current_board={this.current_board}
+            createList={this.props.createList}
+            />
         </ul>
       </div>
     </div>

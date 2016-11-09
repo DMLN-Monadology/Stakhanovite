@@ -97,8 +97,9 @@ $.ajax ({
   url: `api/lists`,
   method: "POST",
   data: { list: {
-      board_id: 67,
-      title: "Moscow"
+      board_id: 1,
+      title: "Shock Worker Brigade 2",
+      order: 2
   }}
 });
 
