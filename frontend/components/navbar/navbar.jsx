@@ -23,6 +23,7 @@ const NavBar = (props) => (
             <button onClick={dropDownLink()} className="ProfileDD2">
               {props.currentUser.username}
             </button>
+            
           </div>
         </div>
         {props.children}

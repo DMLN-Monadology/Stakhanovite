@@ -4,7 +4,8 @@ class Api::ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      render "api/lists/show"
+      @board = @list.board
+      render "api/boards/show"
     else
       render(json: ["Invalid title"], stautus: 401)
     end
@@ -12,12 +13,19 @@ class Api::ListsController < ApplicationController
 
   def update
     @list = list.find(params[:id])
-    if @list.update(list_params)
-      render "api/lists/show"
+
+    if params[:perestroika]
+      lists_array = @list.board.lists
+      List.perestroika(lists_array, @list.order, list_params[:order])
     else
-      render(json: ["Invalid title"], status: 401)
+      @list.update(list_params)
     end
+
+    @board = @list.board
+
+    render 'api/boards/show'
   end
+
 
   def destroy
     @list = List.find(params[:id])
@@ -33,7 +41,7 @@ class Api::ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:board_id, :title)
+    params.require(:list).permit(:board_id, :order, :title)
   end
 
 

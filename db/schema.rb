@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 20161107230331) do
   create_table "lists", force: :cascade do |t|
     t.integer  "board_id",   null: false
     t.string   "title",      null: false
+    t.integer  "order",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_lists_on_board_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
