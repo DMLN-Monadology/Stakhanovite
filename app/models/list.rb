@@ -11,9 +11,12 @@ class List < ApplicationRecord
   )
 
   def self.perestroika(lists_array, prev_location, next_location)
-    current_list = lists_array[prev_location]    #list to be moved
-    lists_array.delete_at(prev_location)       #remove it from lists_array
-    lists_array.insert(next_location, current_list) #re-add it, but in correct order
+    swap_partner_1 = lists_array[prev_location]    #principal list to be moved
+    swap_partner_2 = lists_array[next_location]    #list that will swap spot with principal
+    lists_array.delete(swap_partner_1)       #remove principal from array
+    lists_array.insert(next_location, swap_partner_1) #re-add principal, but in correct order
+    lists_array.delete(swap_partner_2)       #remove list that is supposed to swap
+    lists_array.insert(prev_location, swap_partner_2) #re-add partner, but in correct order
 
     lists_array.each_with_index do |list, idx|
       list.order = idx
