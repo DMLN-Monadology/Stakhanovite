@@ -16,14 +16,14 @@ const NavBar = (props) => (
           <Link to="/boards/show" className="NBboardHeader">Stakhanovites</Link>
           <div className="NBright">
 
-            <button onClick={dropDownLink()} className="ProfileDD1">
+            <button className="ProfileDD1">
               {props.currentUser.username.slice(0,1)}
             </button>
 
-            <button onClick={dropDownLink()} className="ProfileDD2">
+            <button className="ProfileDD2">
               {props.currentUser.username}
             </button>
-            
+
           </div>
         </div>
         {props.children}
