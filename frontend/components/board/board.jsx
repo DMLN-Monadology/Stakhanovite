@@ -1,6 +1,9 @@
 import React from 'react';
-import ListIndexItem from './list_index_item';
+import {DragDropContext} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 import ListForm from '../list_form/list_form';
+import ListSlot from '../lists/list_slot.jsx';
 
 class Board extends React.Component {
   constructor(props) {
@@ -26,9 +29,11 @@ class Board extends React.Component {
         <ul>
           {
             this.props.current_board.lists.map( list => (
-              <ListIndexItem
+              <ListSlot
                 key={list.id}
                 list={list}
+                order={list.order}
+                restructureList={this.props.restructureList}
                 />
             ))
           }
@@ -42,4 +47,4 @@ class Board extends React.Component {
   )}
 }
 
-export default Board;
+export default DragDropContext(HTML5Backend)(Board);

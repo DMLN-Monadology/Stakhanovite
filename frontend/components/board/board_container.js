@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Board from './board';
 import { fetchBoard } from '../../actions/board_actions';
-import { createList } from '../../actions/list_actions';
-
+import { createList, restructureList } from '../../actions/list_actions';
 
 
 const mapStateToProps = (state, { params }) => {
@@ -16,7 +15,8 @@ const mapStateToProps = (state, { params }) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchBoard: (id) => dispatch(fetchBoard(id)),
-  createList: (list) => dispatch(createList(list))
+  createList: (list) => dispatch(createList(list)),
+  restructureList: (list) => dispatch(restructureList(list))
 });
 
 export default connect(
