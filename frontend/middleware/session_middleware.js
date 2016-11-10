@@ -34,7 +34,7 @@ const SessionMiddleware = store => next => action => {
   const boardSuccessCallback = (board) => store.dispatch(receiveBoard(board));
   const boardShowSuccessCallback = (board) => store.dispatch(receiveBoardShow(board));
 
-  const listSuccessCallback = (board) => store.dispatch(receiveCurrentBoard(board));
+  const listSuccessCallback = (board) => store.dispatch(receiveBoardShow(board));
 
   const testErrorCB = () => {return console.log("failure!");};
 

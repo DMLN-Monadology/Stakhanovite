@@ -28,7 +28,7 @@ class ListSlot extends React.Component {
     const connectDropTarget = this.props.connectDropTarget;
 
     return connectDropTarget(
-      <div>
+      <div className="ListSlot">
         <ListIndexItem list={this.props.list} />
       </div>
     )

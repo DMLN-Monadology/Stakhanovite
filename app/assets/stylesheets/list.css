@@ -1,0 +1,7 @@
+.ListSlot {
+  margin: 10px;
+  border: 0.1px solid white;
+  color: white;
+  padding: 5px;
+  cursor: move;
+}

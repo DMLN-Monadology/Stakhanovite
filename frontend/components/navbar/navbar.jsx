@@ -2,33 +2,46 @@ import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
 import ProfileDropDownContainer from '../navbar_dropdowns/profile_dropdown_container';
 
-const dropDownLink = () => {
-  return (event) => {
-    event.preventDefault();
-    hashHistory.push("/boards/controlpanel")
-  };
-};
+class NavBar extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {dropdown: "closed"};
+  }
 
-const NavBar = (props) => (
-      <div>
-        <div className="NavBar">
-          <Link to="/boards/show" className="NBboardLink">Boards</Link>
-          <Link to="/boards/show" className="NBboardHeader">Stakhanovites</Link>
-          <div className="NBright">
+  toggleDropdown() {
+    return (event) => {
+      event.preventDefault();
+      this.state.dropdown === "closed" ? this.setState({ dropdown: "open"}) : this.setState({ dropdown: "closed"})
+    }
+  }
 
-            <button className="ProfileDD1">
-              {props.currentUser.username.slice(0,1)}
-            </button>
+  render() {
+    let dropDown;
+    if (this.state.dropdown === "open") {
+      dropDown = <ProfileDropDownContainer/>
+    };
+        return (
+        <div>
+          <div className="NavBar">
+            <Link to="/boards/show" className="NBboardLink">Boards</Link>
+            <Link to="/boards/show" className="NBboardHeader">Stakhanovites</Link>
+            <div className="NBright">
 
-            <button className="ProfileDD2">
-              {props.currentUser.username}
-            </button>
+              <button onClick={this.toggleDropdown()} className="ProfileDD1">
+                {this.props.currentUser.username.slice(0,1)}
+              </button>
 
+              <button onClick={this.toggleDropdown()} className="ProfileDD2">
+                {this.props.currentUser.username}
+              </button>
+
+            </div>
           </div>
-        </div>
-        {props.children}
-        <ProfileDropDownContainer/>
-      </div>
-);
+          {this.props.children}
+          {dropDown}
+        </div>)
+  };
 
-export default withRouter(NavBar);
+}
+
+export default NavBar;

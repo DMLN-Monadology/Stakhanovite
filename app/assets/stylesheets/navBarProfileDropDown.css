@@ -9,6 +9,10 @@
   border: 1px solid #D6DADC;
 }
 
+.Dropdown{
+  display: flex;
+}
+
 .ProfileDropDown h2{
   width: 95%;
   text-align: center;

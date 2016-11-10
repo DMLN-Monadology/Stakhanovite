@@ -30,11 +30,9 @@ const SessionReducer = (oldState = defaultState, action) => {
       return newState;
     case RECEIVE_BOARD_SHOW:
       newState = merge({}, oldState, {["current_board"]: action.board});
+      newState.current_board.lists = action.board.lists;
       return newState;
     //Lists
-    case RECEIVE_CURRENT_BOARD:
-      newState = merge({}, oldState, {["current_board"]: action.board});
-      return newState;
     default:
       return oldState;
   }
