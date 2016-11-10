@@ -1,6 +1,3 @@
-require 'byebug'
-
-
 class Api::ListsController < ApplicationController
 
   def create
@@ -10,7 +7,7 @@ class Api::ListsController < ApplicationController
       @board = @list.board
       render "api/boards/show"
     else
-      render(json: ["Invalid title"], stautus: 401)
+      render(json: ["Invalid title"], status: 401)
     end
   end
 

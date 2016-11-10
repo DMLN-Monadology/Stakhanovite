@@ -1,7 +1,12 @@
-require 'byebug'
-
 class List < ApplicationRecord
   validates :board_id, :title, :order, presence: true
+
+  has_many(
+    :cards,
+    primary_key: :id,
+    foreign_key: :list_id,
+    class_name: "Card"
+  )
 
   belongs_to(
     :board,
