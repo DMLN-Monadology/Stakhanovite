@@ -20,11 +20,16 @@ import { CREATE_LIST,
          RESTRUCTURE_LIST
 } from '../actions/list_actions';
 
+import { CREATE_CARD,
+         RESTRUCTURE_CARD
+} from '../actions/card_actions';
+
 
 //api utilities
 import { signin, signup, signout } from '../util/session_api_util';
 import { createBoard, fetchBoard } from '../util/board_api_util';
 import { createList, restructureList } from '../util/list_api_util';
+import { createCard, restructureCard } from '../util/card_api_util';
 
 const SessionMiddleware = store => next => action => {
 
@@ -60,10 +65,17 @@ const SessionMiddleware = store => next => action => {
       return next(action);
     // Lists
     case CREATE_LIST:
-      createList(action.list, listSuccessCallback, testErrorCB)
+      createList(action.list, boardShowSuccessCallback, testErrorCB)
       return next(action);
     case RESTRUCTURE_LIST:
-      restructureList(action.list, listSuccessCallback, testErrorCB)
+      restructureList(action.list, boardShowSuccessCallback, testErrorCB);
+      return next(action);
+    // Cards
+    case CREATE_CARD:
+      createCard(action.card, boardShowSuccessCallback, testErrorCB);
+      return next(action);
+    case RESTRUCTURE_CARD:
+      restructureCard(action.card, boardShowSuccessCallback, testErrorCB);
       return next(action);
     default:
       return next(action);

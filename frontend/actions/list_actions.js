@@ -15,5 +15,5 @@ export const deleteList = (id) => ({
 
 export const restructureList = (list) => ({
   type: RESTRUCTURE_LIST,
-  list 
-})
+  list
+});
