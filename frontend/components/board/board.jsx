@@ -5,11 +5,6 @@ import ListForm from '../list_form/list_form';
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.props.boards.forEach( (board) => {
-      if (board.id === this.props.boardId) {
-        this.current_board = board
-      }
-    });
   }
 
   componentWillMount() {
@@ -17,16 +12,20 @@ class Board extends React.Component {
   }
 
 
+
   render() {
+    if (!this.props.current_board) {return (
+      <div>loading</div>
+    )}
     return (
     <div className="BoardBody">
       <h2 className="BoardBodyHeader">
-        {this.current_board.title}
+        {this.props.current_board.title}
       </h2>
       <div className="BoardIndexBody">
         <ul>
           {
-            this.current_board.lists.map( list => (
+            this.props.current_board.lists.map( list => (
               <ListIndexItem
                 key={list.id}
                 list={list}
@@ -34,7 +33,7 @@ class Board extends React.Component {
             ))
           }
           <ListForm
-            current_board={this.current_board}
+            current_board={this.props.current_board}
             createList={this.props.createList}
             />
         </ul>

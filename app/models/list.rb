@@ -1,3 +1,5 @@
+require 'byebug'
+
 class List < ApplicationRecord
   validates :board_id, :title, :order, presence: true
 
@@ -17,7 +19,7 @@ class List < ApplicationRecord
       list.order = idx
       list.save
     end
-    
+
     lists_array
 
   end

@@ -9,7 +9,8 @@ const mapStateToProps = (state, { params }) => {
   const boardId = parseInt(params.boardId);
   return {
     boardId: boardId,
-    boards: state.session.currentUser.owned_boards
+    boards: state.session.currentUser.owned_boards,
+    current_board: state.session.current_board
   };
 };
 

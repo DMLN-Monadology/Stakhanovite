@@ -2,7 +2,13 @@ export const CREATE_BOARD = "CREATE_BOARD";
 export const FETCH_BOARD = "FETCH_BOARD";
 export const DELETE_BOARD = "DELETE_BOARD";
 export const RECEIVE_BOARD = "RECEIVE_BOARD";
+export const RECEIVE_CURRENT_BOARD = "RECEIVE_CURRENT_BOARD";
 export const RECEIVE_BOARD_ERRORS = "RECEIVE_BOARD_ERRORS";
+
+export const receiveCurrentBoard = (board) => ({
+  type: RECEIVE_CURRENT_BOARD,
+  board
+});
 
 export const fetchBoard = (id) => ({
   type: FETCH_BOARD,

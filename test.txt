@@ -106,24 +106,6 @@ $.ajax ({
 
 ***********MISC
 
-const mapStateToProps = (state, { params }) => {
-  const boardId = parseInt(params.boardId);
-  return {
-    boardId
-  };
-};
+json.extract! board, :id, :owner_id, :title, :lists
 
-const mapStateToProps = (state, { params }) => {
-  const boardId = parseInt(params.boardId);
-  const owned_boards = state.session.currentUser.owned_boards;
-  let current_board = {};
-  for (let i = 0; i < owned_boards.length, i++) {
-    if (owned_boards[i].id === boardId) {
-      current_board = owned_boards[i];
-    };
-  };
-  return {
-    boardId,
-    current_board
-  };
-};
+json.lists board.lists, partial: "api/lists/list.json.jbuilder", as: :list

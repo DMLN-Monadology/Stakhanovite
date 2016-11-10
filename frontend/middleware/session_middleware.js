@@ -12,18 +12,19 @@ import {SIGN_IN,
 import { CREATE_BOARD,
          FETCH_BOARD,
          receiveBoard,
-         receiveBoardShow
+         receiveBoardShow,
+         receiveCurrentBoard
 } from '../actions/board_actions';
 
 import { CREATE_LIST,
-         receiveList
+         RESTRUCTURE_LIST
 } from '../actions/list_actions';
 
 
 //api utilities
 import { signin, signup, signout } from '../util/session_api_util';
 import { createBoard, fetchBoard } from '../util/board_api_util';
-import { createList } from '../util/list_api_util';
+import { createList, restructureList } from '../util/list_api_util';
 
 const SessionMiddleware = store => next => action => {
 
@@ -33,7 +34,7 @@ const SessionMiddleware = store => next => action => {
   const boardSuccessCallback = (board) => store.dispatch(receiveBoard(board));
   const boardShowSuccessCallback = (board) => store.dispatch(receiveBoardShow(board));
 
-  const listSuccessCallback = (list) => store.dispatch(receiveList(list));
+  const listSuccessCallback = (board) => store.dispatch(receiveCurrentBoard(board));
 
   const testErrorCB = () => {return console.log("failure!");};
 
@@ -60,6 +61,9 @@ const SessionMiddleware = store => next => action => {
     // Lists
     case CREATE_LIST:
       createList(action.list, listSuccessCallback, testErrorCB)
+      return next(action);
+    case RESTRUCTURE_LIST:
+      restructureList(action.list, listSuccessCallback, testErrorCB)
       return next(action);
     default:
       return next(action);

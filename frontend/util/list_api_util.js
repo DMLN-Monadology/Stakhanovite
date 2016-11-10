@@ -12,7 +12,17 @@ export const updateList = (list, success, error) => {
   $.ajax ({
     url: `api/lists/${list.id}`,
     method: "PATCH",
-    data: {list},
+    data: {list: list, perestroika: false},
+    success,
+    error
+  });
+};
+
+export const restructureList = (list, success, error) => {
+  $.ajax ({
+    url: `api/lists/${list.id}`,
+    method: "PATCH",
+    data: {list, perestroika: true},
     success,
     error
   });

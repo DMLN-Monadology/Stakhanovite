@@ -3,9 +3,7 @@ import {RECEIVE_CURRENT_USER,
         RECEIVE_ERRORS,
         SIGN_OUT} from '../actions/session_actions';
 
-import { RECEIVE_BOARD, RECEIVE_BOARD_SHOW } from '../actions/board_actions';
-
-import { RECEIVE_LIST } from '../actions/list_actions';
+import { RECEIVE_BOARD, RECEIVE_BOARD_SHOW, RECEIVE_CURRENT_BOARD } from '../actions/board_actions';
 
 import merge from 'lodash/merge';
 
@@ -34,9 +32,8 @@ const SessionReducer = (oldState = defaultState, action) => {
       newState = merge({}, oldState, {["current_board"]: action.board});
       return newState;
     //Lists
-    case RECEIVE_LIST:
-      newState = merge({}, oldState)
-      newState.current_board.lists.push(action.list);
+    case RECEIVE_CURRENT_BOARD:
+      newState = merge({}, oldState, {["current_board"]: action.board});
       return newState;
     default:
       return oldState;

@@ -1,3 +1,6 @@
+require 'byebug'
+
+
 class Api::ListsController < ApplicationController
 
   def create
@@ -12,11 +15,10 @@ class Api::ListsController < ApplicationController
   end
 
   def update
-    @list = list.find(params[:id])
-
+    @list = List.find(params[:id])
     if params[:perestroika]
-      lists_array = @list.board.lists
-      List.perestroika(lists_array, @list.order, list_params[:order])
+      lists_array = @list.board.lists.to_a.sort_by { |list| list.order }
+      List.perestroika(lists_array, @list.order, list_params[:order].to_i)
     else
       @list.update(list_params)
     end

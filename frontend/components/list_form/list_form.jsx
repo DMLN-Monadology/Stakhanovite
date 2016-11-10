@@ -11,12 +11,17 @@ class ListForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createList(this.state)
+    this.props.createList(this.state);
+    this.setState({
+      title: "",
+      board_id: this.props.current_board.id,
+      order: (this.props.current_board.lists.length + 1 )
+    })
   }
 
   update(field) {
