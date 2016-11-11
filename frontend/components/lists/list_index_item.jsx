@@ -23,21 +23,7 @@ class ListIndexItem extends React.Component {
 
 
   render() {
-    let cardSlots
-    if (this.props.list.cards.length === 0 ) {
-      cardSlots = <CardSlot
-                    card="placeholder"/>
-    } else {
-      cardSlots = this.props.list.cards.map( card => (
-        <CardSlot
-          key={card.id}
-          card={card}
-          order={card.order}
-          perestroikaInOneList={this.props.perestroikaInOneList}
-          perestroikaInTwoLists={this.props.perestroikaInTwoLists}
-          />
-      ))
-    }
+
 
     const connectDragSource = this.props.connectDragSource;
 
@@ -46,8 +32,24 @@ class ListIndexItem extends React.Component {
         <h3>{this.props.list.title}</h3>
 
         {
-          cardSlots
+          this.props.list.cards.map( card => (
+            <CardSlot
+              key={card.id}
+              card={card}
+              listId={card.list_id}
+              order={card.order}
+              restructureCard={this.props.restructureCard}
+              />
+          ))
         }
+
+        <CardSlot
+          card="placeholder"
+          listId={this.props.list.id}
+          order={this.props.list.cards.length}
+          restructureCard={this.props.restructureCard}
+        />
+
         <br/>
         <CardForm current_list={this.props.list} createCard={this.props.createCard}/>
 

@@ -21,8 +21,7 @@ import { CREATE_LIST,
 } from '../actions/list_actions';
 
 import { CREATE_CARD,
-         PERESTROIKA_IN_ONE_LIST,
-         PERESTROIKA_IN_TWO_LISTS
+         RESTRUCTURE_CARD
 } from '../actions/card_actions';
 
 
@@ -30,7 +29,7 @@ import { CREATE_CARD,
 import { signin, signup, signout } from '../util/session_api_util';
 import { createBoard, fetchBoard } from '../util/board_api_util';
 import { createList, restructureList } from '../util/list_api_util';
-import { createCard, perestroikaInOneList, perestroikaInTwoLists  } from '../util/card_api_util';
+import { createCard, restructureCard  } from '../util/card_api_util';
 
 const SessionMiddleware = store => next => action => {
 
@@ -75,11 +74,8 @@ const SessionMiddleware = store => next => action => {
     case CREATE_CARD:
       createCard(action.card, boardShowSuccessCallback, testErrorCB);
       return next(action);
-    case PERESTROIKA_IN_ONE_LIST:
-      perestroikaInOneList(action.card, boardShowSuccessCallback, testErrorCB);
-      return next(action);
-    case PERESTROIKA_IN_TWO_LISTS:
-      perestroikaInTwoLists(action.card, action.fiveyearplan, boardShowSuccessCallback, testErrorCB);
+    case RESTRUCTURE_CARD:
+      restructureCard(action.card, boardShowSuccessCallback, testErrorCB);
       return next(action);
     default:
       return next(action);

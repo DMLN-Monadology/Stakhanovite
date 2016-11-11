@@ -32,8 +32,7 @@ class ListSlot extends React.Component {
         <ListIndexItem
           list={this.props.list}
           createCard={this.props.createCard}
-          perestroikaInOneList={this.props.perestroikaInOneList}
-          perestroikaInTwoLists={this.props.perestroikaInTwoLists}
+          restructureCard={this.props.restructureCard}
           />
       </div>
     )

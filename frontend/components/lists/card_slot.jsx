@@ -6,24 +6,14 @@ import CardIndexItem from './card_index_item';
 const cardArrival = {
   drop(props, monitor) {
     const arrivingCard = monitor.getItem().card;
-    if (props.card === "placeholder") {
-      console.log("you are moving to an empty list");
-    } else if (arrivingCard.list_id !== props.card.list_id) {
-      console.log("you are moving between lists")
-    } else if (arrivingCard.order !== props.order) {
-      console.log("you are moving within lists")
-    }
+    if (arrivingCard.list_id !== props.listId || arrivingCard.order !== parseInt(props.order)) {
+      arrivingCard.list_id = props.listId
+      arrivingCard.order = parseInt(props.order)
+      props.restructureCard(arrivingCard)
+    };
   }
-}
+};
 
-//perestroikaInTwoLists dispatch takes 2 arguments: card and fiveyearplan
-
-//card must contains:
-// card itself, which contains the list info
-
-//fiveyearplan must contain:
-departure_list_id,
-arrival_list_id,
 
 function collect(connect, monitor) {
   return {

@@ -15,7 +15,7 @@ class Api::ListsController < ApplicationController
     @list = List.find(params[:id])
     if params[:perestroika]
       lists_array = @list.board.lists.to_a.sort_by { |list| list.order }
-      List.perestroika(lists_array, @list.order, list_params[:order].to_i)
+      List.perestroika(lists_array, @list.order, list_params[:order].to_i) #list array, old order, and new order
     else
       @list.update(list_params)
     end
