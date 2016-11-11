@@ -2,7 +2,7 @@
 
 [Stakhanovites live][heroku]
 
-[heroku]: https://stakhanovites.herokuapp.com/#/
+[heroku]: https://stakhanovites.com/#/
 
 Stakhanovites is a full-stack web application inspired by Trello,
 Alexey Stakhanov (an exceptionally hardworking miner in the former
@@ -62,4 +62,4 @@ Adding Members to Boards is a standard feature of Trello (and thus Stakhanovites
 
 Comments will provide users with an additional means of communicating with team members in the context of the cards to which the comments belong.
 
-Due dates will provide a means for a more bureaucratic management of projects, allowing managers to delegate tasks and workflows not only across space, but time as well. 
+Due dates will provide a means for a more bureaucratic management of projects, allowing managers to delegate tasks and workflows not only across space, but time as well.
