@@ -7,12 +7,15 @@
 .Card {
   color: black;
   background: white;
-  width: 240px;
-  height: 24px;
+  max-width: 240px;
+  min-height: 24px;
+  height: 100%;
   padding: 6px 0px 2px 8px;
   border-radius: 5px;
   margin-left: 10px;
+  white-space: normal;
 }
+
 
 .placeholder {
   background: none;

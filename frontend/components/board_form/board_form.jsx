@@ -37,7 +37,7 @@ class BoardForm extends React.Component {
           <label className="NewBoardFormElement">
             <input
               placeholder="Like 'Increase wheat production by 500%'"
-              type="text"
+              type="textarea"
               value={this.state.title}
               onChange={this.update("title")}
             />
