@@ -12,16 +12,28 @@ class Api::CardsController < ApplicationController
   end
 
   def update
+    @card = Card.find(params[:id])
 
+    if params[:perestroikaInOneList]
+
+    elsif params[:perestroikaInTwoLists]
+
+    else
+      @card.update(card_params)
+    end
+
+    @board = @card.list.board
+
+    render 'api/boards/show'
   end
 
   def destroy
-    @list = List.find(params[:id])
+    @card = Card.find(params[:id])
 
-    if @list.destroy
+    if @card.destroy
       render "api/boards/show"
     else
-      render json: @list.errors.full_messages, status: 422
+      render json: @card.errors.full_messages, status: 422
     end
   end
 

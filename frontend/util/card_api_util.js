@@ -18,11 +18,21 @@ export const updateCard = (card, success, error) => {
   });
 };
 
-export const restructureCard = (card, success, error) => {
+export const perestroikaInOneList = (card, success, error) => {
   $.ajax ({
     url: `api/cards/${card.id}`,
     method: "PATCH",
-    data: {card, perestroika: true},
+    data: {card, perestroikaInOneList: true},
+    success,
+    error
+  });
+};
+
+export const perestroikaInTwoLists = (card, fiveyearplan, success, error) => {
+  $.ajax ({
+    url: `api/cards/${card.id}`,
+    method: "PATCH",
+    data: {card, fiveyearplan, perestroikaInTwoLists: true},
     success,
     error
   });
@@ -33,6 +43,6 @@ export const deleteCard = (id, success, error) => {
     url: `api/cards/${id}`,
     method: "DELETE",
     success,
-    error 
+    error
   });
 };

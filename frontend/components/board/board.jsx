@@ -40,7 +40,8 @@ class Board extends React.Component {
                 order={list.order}
                 restructureList={this.props.restructureList}
                 createCard={this.props.createCard}
-                restructureCard={this.props.restructureCard}
+                perestroikaInOneList={this.props.perestroikaInOneList}
+                perestroikaInTwoLists={this.props.perestroikaInTwoLists}
                 />
             ))
           }

@@ -23,7 +23,7 @@ class ListIndexItem extends React.Component {
 
 
   render() {
-    let cardSlots 
+    let cardSlots
     if (this.props.list.cards.length === 0 ) {
       cardSlots = <CardSlot
                     card="placeholder"/>
@@ -33,7 +33,8 @@ class ListIndexItem extends React.Component {
           key={card.id}
           card={card}
           order={card.order}
-          restructureCard={this.props.restructureCard}
+          perestroikaInOneList={this.props.perestroikaInOneList}
+          perestroikaInTwoLists={this.props.perestroikaInTwoLists}
           />
       ))
     }

@@ -7,6 +7,7 @@ class List < ApplicationRecord
     :cards,
     primary_key: :id,
     foreign_key: :list_id,
+    dependent: :destroy,
     class_name: "Card"
   )
 

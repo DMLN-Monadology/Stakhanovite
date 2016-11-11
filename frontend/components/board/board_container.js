@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Board from './board';
 import { fetchBoard } from '../../actions/board_actions';
 import { createList, restructureList } from '../../actions/list_actions';
-import { createCard, restructureCard } from '../../actions/card_actions';
+import { createCard, perestroikaInOneList, perestroikaInTwoLists } from '../../actions/card_actions';
 
 const mapStateToProps = (state, { params }) => {
   const boardId = parseInt(params.boardId);
@@ -18,7 +18,8 @@ const mapDispatchToProps = dispatch => ({
   createList: (list) => dispatch(createList(list)),
   restructureList: (list) => dispatch(restructureList(list)),
   createCard: (card) => dispatch(createCard(card)),
-  restructureCard: (card) => dispatch(restructureCard(card))
+  perestroikaInOneList: (card) => dispatch(perestroikaInOneList(card)),
+  perestroikaInTwoLists: (card) => dispatch(perestroikaInTwoLists(card))
 });
 
 export default connect(

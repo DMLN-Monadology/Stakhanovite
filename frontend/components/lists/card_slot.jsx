@@ -16,6 +16,15 @@ const cardArrival = {
   }
 }
 
+//perestroikaInTwoLists dispatch takes 2 arguments: card and fiveyearplan
+
+//card must contains:
+// card itself, which contains the list info
+
+//fiveyearplan must contain:
+departure_list_id,
+arrival_list_id,
+
 function collect(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget()
