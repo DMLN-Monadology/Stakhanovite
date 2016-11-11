@@ -1,4 +1,3 @@
-require 'byebug'
 
 class Card < ApplicationRecord
   validates :list_id, :title, :order, presence: true

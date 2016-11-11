@@ -1,37 +1,8 @@
-render() {
-  let cardSlots
-  if (this.props.list.cards.length === 0 ) {
-    cardSlots = <CardSlot
-                  card="placeholder"
-                  listId={this.props.list.id}
-                  order="0"
-                  restructureCard={this.props.restructureCard}
-                  />
-  } else {
-    cardSlots = this.props.list.cards.map( card => (
-      <CardSlot
-        key={card.id}
-        card={card}
-        listId={card.list_id}
-        order={card.order}
-        restructureCard={this.props.restructureCard}
-        />
-    ))
+random guest signin:
+
+//  handleGuestSubmit(event){
+    event.preventDefault();
+    let randomAccount = Math.floor(Math.random() * (27 - 0 + 1))
+    this.props.guestSignIn({username: this.guestAccounts[randomAccount], password:"Guest123"});
+    this.props.router.push("/boards");
   }
-
-  const connectDragSource = this.props.connectDragSource;
-
-  return connectDragSource(
-    <div>
-      <h3>{this.props.list.title}</h3>
-
-      {
-        cardSlots
-      }
-      <br/>
-      <CardForm current_list={this.props.list} createCard={this.props.createCard}/>
-
-    </div>
-  )
-}
-}
