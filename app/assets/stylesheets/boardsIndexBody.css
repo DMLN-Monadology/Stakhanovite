@@ -38,10 +38,9 @@
 .BoardIndexItem a {
   position: absolute;
   color: white;
-  padding-left: 10px;
-  padding-top: 10px;
-  height: 100%;
-  width: 100%;
+  padding: 5%;
+  height: 90%;
+  width: 90%;
 }
 
 .BoardIndexItem:hover {

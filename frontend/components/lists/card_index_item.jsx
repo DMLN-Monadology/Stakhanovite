@@ -21,10 +21,10 @@ class CardIndexItem extends React.Component {
 
   render() {
     const connectDragSource = this.props.connectDragSource;
-
+    const clssName = this.props.card === 'placeholder' ? 'Card placeholder' : 'Card'
     return connectDragSource(
       <div>
-        <h4>{this.props.card.title}</h4>
+        <h4 className={clssName}>{this.props.card.title}</h4>
       </div>
     )
   }

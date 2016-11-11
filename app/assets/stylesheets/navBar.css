@@ -57,6 +57,7 @@
   border-bottom-left-radius: 3px;
   background-color: #CBD0D3;
   cursor: pointer;
+  outline: none;
 }
 
 .ProfileDD1:hover {
@@ -76,6 +77,7 @@
   background-color: #2A75AE;
   margin-right: 5px;
   cursor: pointer;
+  outline: none;
 }
 
 .ProfileDD2:hover {

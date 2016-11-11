@@ -3,34 +3,53 @@
   align-items: flex-start;
   flex-direction: column;
   position: fixed;
-  width: 130px;
+  width: 200px;
   top: 40px;
   right: 2px;
   border: 1px solid #D6DADC;
+  z-index: 1;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);
 }
 
-.Dropdown{
-  display: flex;
+.DDReturn {
+  position: fixed;
+  top: 42px;
+  right: 5px;
+  z-index: 5;
+  border: none;
+  background: none;
+  color: #8c8c8c;
+  cursor: pointer;
+  font-weight: lighter;
+  font-size: 16px;
 }
+
 
 .ProfileDropDown h2{
-  width: 95%;
+  width: 94%;
   text-align: center;
   align-self: center;
-  color: grey;
+  color: #8c8c8c;
   border-bottom: 1px solid #D6DADC;
   margin-bottom: 5px;
+  padding: 5px 0;
 }
 
 .ProfileDropDown button {
   align-self: flex-start;
   text-align: left;
-  color: black;
+  color: #4d4d4d;
   background-color: white;
   transition: background-color 0.5s ease;
-  padding: 2px 0px 2px 5px;
-  border-radius: 0px;
+  padding: 6px 10px;
+  border: none;
   cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 .ProfileDropDown button:hover {

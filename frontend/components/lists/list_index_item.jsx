@@ -18,18 +18,58 @@ function collect(connect, monitor) {
 class ListIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {cardDropdown: "closed"};
+  }
+
+  toggleDropdown() {
+    return (event) => {
+      event.preventDefault();
+      this.state.cardDropdown === "closed" ?
+      this.setState({ cardDropdown: "open"}) :
+      this.setState({ cardDropdown: "closed"})
+    }
   }
 
 
-
   render() {
+    let dropDown;
+    if (this.state.cardDropdown === "open") {
+      dropDown = (
+        <div className="CardFormContainer">
+          <CardForm current_list={this.props.list} createCard={this.props.createCard}/>
+          <button onClick={this.toggleDropdown()} className="CardDDReturn">
+            X
+          </button>
+        </div>
+      )
+    };
 
+    let placeholder;
+    if (this.props.list.cards.length === 0) {
+      placeholder = (
+        <CardSlot
+          card="placeholder"
+          listId={this.props.list.id}
+          order={this.props.list.cards.length}
+          restructureCard={this.props.restructureCard}
+        />
+      )
+    } else {
+      placeholder = (
+        <CardSlot
+          card="placeholder"
+          listId={this.props.list.id}
+          order={this.props.list.cards.length - 1}
+          restructureCard={this.props.restructureCard}
+        />
+      )
+    }
 
     const connectDragSource = this.props.connectDragSource;
 
     return connectDragSource(
-      <div>
-        <h3>{this.props.list.title}</h3>
+      <div className="List">
+        <h3 className="ListTitle">{this.props.list.title}</h3>
 
         {
           this.props.list.cards.map( card => (
@@ -51,7 +91,12 @@ class ListIndexItem extends React.Component {
         />
 
         <br/>
-        <CardForm current_list={this.props.list} createCard={this.props.createCard}/>
+        <div className="CardFormDD">
+          <button onClick={this.toggleDropdown()} className="CardDDButton">
+            Add a card...
+          </button>
+          {dropDown}
+        </div>
 
       </div>
     )

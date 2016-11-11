@@ -18,7 +18,14 @@ class NavBar extends React.Component {
   render() {
     let dropDown;
     if (this.state.dropdown === "open") {
-      dropDown = <ProfileDropDownContainer/>
+      dropDown = (
+        <div>
+          <ProfileDropDownContainer/>
+          <button onClick={this.toggleDropdown()} className="DDReturn">
+            x
+          </button>
+        </div>
+        )
     };
         return (
         <div>
