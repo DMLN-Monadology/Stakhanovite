@@ -1,6 +1,7 @@
 import React from 'react';
-import {DragSource} from 'react-dnd';
+import { DragSource } from 'react-dnd';
 import CardForm from '../card_form/card_form';
+import CardSlot from './card_slot';
 
 const listDeparture = {
   beginDrag(props) {
@@ -19,7 +20,24 @@ class ListIndexItem extends React.Component {
     super(props);
   }
 
-  render () {
+
+
+  render() {
+    let cardSlots 
+    if (this.props.list.cards.length === 0 ) {
+      cardSlots = <CardSlot
+                    card="placeholder"/>
+    } else {
+      cardSlots = this.props.list.cards.map( card => (
+        <CardSlot
+          key={card.id}
+          card={card}
+          order={card.order}
+          restructureCard={this.props.restructureCard}
+          />
+      ))
+    }
+
     const connectDragSource = this.props.connectDragSource;
 
     return connectDragSource(
@@ -27,9 +45,7 @@ class ListIndexItem extends React.Component {
         <h3>{this.props.list.title}</h3>
 
         {
-          this.props.list.cards.map( card => (
-            <div>{card.title} is here</div>
-          ))
+          cardSlots
         }
         <br/>
         <CardForm current_list={this.props.list} createCard={this.props.createCard}/>

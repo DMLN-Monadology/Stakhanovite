@@ -29,7 +29,11 @@ class ListSlot extends React.Component {
 
     return connectDropTarget(
       <div className="ListSlot">
-        <ListIndexItem list={this.props.list} createCard={this.props.createCard}/>
+        <ListIndexItem
+          list={this.props.list}
+          createCard={this.props.createCard}
+          restructureCard={this.props.restructureCard}
+          />
       </div>
     )
   }

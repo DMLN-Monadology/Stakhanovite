@@ -30,7 +30,7 @@ class Api::ListsController < ApplicationController
     @list = List.find(params[:id])
 
     if @list.destroy
-      render "api/lists/show"
+      render  'api/boards/show'
     else
       render json: @board.errors.full_messages, status: 422
     end

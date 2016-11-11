@@ -16,7 +16,13 @@ class Api::CardsController < ApplicationController
   end
 
   def destroy
-    
+    @list = List.find(params[:id])
+
+    if @list.destroy
+      render "api/boards/show"
+    else
+      render json: @list.errors.full_messages, status: 422
+    end
   end
 
   private
