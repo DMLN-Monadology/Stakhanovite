@@ -1,6 +1,6 @@
 import React from 'react';
 import {DragSource} from 'react-dnd';
-
+import CardForm from '../card_form/card_form';
 
 const listDeparture = {
   beginDrag(props) {
@@ -24,7 +24,16 @@ class ListIndexItem extends React.Component {
 
     return connectDragSource(
       <div>
-        {this.props.list.title}
+        <h3>{this.props.list.title}</h3>
+
+        {
+          this.props.list.cards.map( card => (
+            <div>{card.title} is here</div>
+          ))
+        }
+        <br/>
+        <CardForm current_list={this.props.list} createCard={this.props.createCard}/>
+
       </div>
     )
   }

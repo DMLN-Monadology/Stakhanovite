@@ -1,3 +1,5 @@
+require 'byebug'
+
 class List < ApplicationRecord
   validates :board_id, :title, :order, presence: true
 

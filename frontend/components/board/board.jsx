@@ -11,12 +11,12 @@ class Board extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchBoard(this.props.params.boardId);
+    this.props.fetchBoard(this.props.boardId);
   }
 
   componentWillReceiveProps(newProps) {
-    if (!this.props.current_board || this.props.current_board.id !== parseInt(newProps.params.boardId))
-      {this.props.fetchBoard(newProps.params.boardId)};
+    if (!this.props.current_board || this.props.current_board.id !== parseInt(newProps.boardId))
+      {this.props.fetchBoard(newProps.boardId)};
   }
 
 
@@ -39,6 +39,7 @@ class Board extends React.Component {
                 list={list}
                 order={list.order}
                 restructureList={this.props.restructureList}
+                createCard={this.props.createCard}
                 />
             ))
           }
