@@ -39,6 +39,9 @@
   text-align: left;
   outline: none;
   vertical-align: top;
+  resize: none;
+  border: none;
+  border-radius: 5px;
 }
 
 .NewCardSubmit {

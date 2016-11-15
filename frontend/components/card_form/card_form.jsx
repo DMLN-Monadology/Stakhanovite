@@ -35,8 +35,7 @@ class CardForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="textarea"
+          <textarea
             value={this.state.title}
             onChange={this.update("title")}
             className="NewCardInput"
