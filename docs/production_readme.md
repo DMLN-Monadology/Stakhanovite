@@ -2,7 +2,7 @@
 
 [Stakhanovites live][heroku]
 
-[heroku]: https://stakhanovites.com/#/
+[heroku]: http://stakhanovites.com/#/
 
 Stakhanovites is a full-stack web application inspired by Trello,
 Alexey Stakhanov (an exceptionally hardworking miner in the former

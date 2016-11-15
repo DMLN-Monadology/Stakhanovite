@@ -16,15 +16,15 @@
 
 .BoardIndexBody {
   position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-x: scroll;
+  max-height: 65%;
+  overflow-y: scroll;
 }
 
 .BoardIndexBody ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   margin-bottom: 20px;
   margin-left: 10px;
-
 }
