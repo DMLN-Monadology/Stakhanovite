@@ -34,3 +34,11 @@ export const fetchBoard = (id, success) => {
     success
   });
 };
+
+export const fetchUsersSearches = (success) => {
+  $.ajax ({
+    url: 'api/users',
+    method: "GET",
+    success
+  });
+};

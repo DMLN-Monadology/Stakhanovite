@@ -42,3 +42,16 @@ export const receiveBoardShow = (board) => ({
   type: RECEIVE_BOARD_SHOW,
   board
 });
+
+export const FETCH_USERS_SEARCHES = "FETCH_USERS_SEARCHES";
+
+export const fetchUsersSearches = () => ({
+  type: FETCH_USERS_SEARCHES
+});
+
+export const RECEIVE_USERS_SEARCHES = "RECEIVE_USERS_SEARCHES";
+
+export const receiveUsersSearches = (users) => ({
+  type: RECEIVE_USERS_SEARCHES,
+  users
+});

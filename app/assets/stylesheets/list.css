@@ -4,9 +4,10 @@
   padding: 5px 0px 0px 0px;
   cursor: pointer;
   background: #D5D8E0;
-  border-radius: 3px;
+  border-radius: 5px;
   height: 100%;
-  width: 270px;
+  min-width: 270px;
+  max-width: 275px;
 }
 
 .ListTitle {

@@ -1,6 +1,10 @@
 .CardSlot {
   margin-bottom: 10px;
   cursor: pointer;
+  background-color: #FFB6C1;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 
@@ -12,10 +16,8 @@
   height: 100%;
   padding: 8px;
   border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
   white-space: normal;
-  overflow: scroll;
+  overflow: auto;
 }
 
 

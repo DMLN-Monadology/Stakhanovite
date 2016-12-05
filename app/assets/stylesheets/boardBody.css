@@ -1,8 +1,9 @@
 .BoardBody {
   background-color: #1764B4;
   position: fixed;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .BoardBodyHeader {
@@ -17,9 +18,10 @@
 .BoardIndexBody {
   position: relative;
   white-space: normal;
+  height: 90%;
+  width: 110%;
+  padding-bottom: 50px;
   overflow-x: scroll;
-  max-height: 65%;
-  overflow-y: scroll;
 }
 
 .BoardIndexBody ul {

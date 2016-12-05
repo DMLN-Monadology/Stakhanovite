@@ -11,6 +11,8 @@ import {SIGN_IN,
 
 import { CREATE_BOARD,
          FETCH_BOARD,
+         FETCH_USERS_SEARCHES,
+         receiveUsersSearches,
          receiveBoard,
          receiveBoardShow,
          receiveCurrentBoard
@@ -27,7 +29,7 @@ import { CREATE_CARD,
 
 //api utilities
 import { signin, signup, signout } from '../util/session_api_util';
-import { createBoard, fetchBoard } from '../util/board_api_util';
+import { createBoard, fetchBoard, fetchUsersSearches } from '../util/board_api_util';
 import { createList, restructureList } from '../util/list_api_util';
 import { createCard, restructureCard  } from '../util/card_api_util';
 
@@ -40,6 +42,8 @@ const SessionMiddleware = store => next => action => {
   const boardShowSuccessCallback = (board) => store.dispatch(receiveBoardShow(board));
 
   const listSuccessCallback = (board) => store.dispatch(receiveBoardShow(board));
+
+  const fetchUsersSearchesCB = (users) => store.dispatch(receiveUsersSearches(users));
 
   const testErrorCB = () => {return console.log("failure!");};
 
@@ -57,6 +61,9 @@ const SessionMiddleware = store => next => action => {
         });
       break;
     // Boards
+    case FETCH_USERS_SEARCHES:
+      fetchUsersSearches(fetchUsersSearchesCB)
+      return next(action);
     case CREATE_BOARD:
       createBoard(action.board, boardSuccessCallback, testErrorCB)
       return next(action);
