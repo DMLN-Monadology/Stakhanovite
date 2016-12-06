@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { restructureList } from './actions/list_actions';
+import { createMembership, deleteMembership } from './util/board_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
   window.ele1 = {
-    id: 56,
-    order: 0,
+    member_id: 176,
+    board_id: 35
   }
 
 
@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.store = store
 
-  window.restructureList = restructureList;
+  window.createMembership = createMembership;
+
+  window.deleteMembership = deleteMembership;
 
 
 });

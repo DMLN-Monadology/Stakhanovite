@@ -6,3 +6,10 @@ random guest signin:
     this.props.guestSignIn({username: this.guestAccounts[randomAccount], password:"Guest123"});
     this.props.router.push("/boards");
   }
+
+
+  @users.each do |user|
+    json.set! user.id do
+      json.extract! user, :id, :username, :image_url
+    end
+  end

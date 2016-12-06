@@ -5,3 +5,7 @@ json.lists do
     json.partial! "api/lists/list.json.jbuilder", list: list
   end
 end
+
+json.members do
+  json.array!(board.members) 
+end

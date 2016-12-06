@@ -8,10 +8,6 @@ class BoardsIndex extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchUsersSearches();
-  }
-
   render () {
     return (
       <div className="BoardsIndex">
