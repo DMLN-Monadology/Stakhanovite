@@ -13,3 +13,9 @@ random guest signin:
       json.extract! user, :id, :username, :image_url
     end
   end
+
+  json.members do
+    json.array!(board.members) do |member|
+      json.extract! member, :id, :image_url, :username, :memberships
+    end
+  end

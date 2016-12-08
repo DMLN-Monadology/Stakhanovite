@@ -5,7 +5,11 @@ import HTML5Backend from 'react-dnd-html5-backend';
 
 import ListForm from '../list_form/list_form';
 import ListSlot from '../lists/list_slot';
-import SearchResultItem from './member';
+import SearchResultItem from './search_result_item';
+import MemberItem from './members_item';
+
+import merge from 'lodash/merge';
+
 
 class Board extends React.Component {
   constructor(props) {
@@ -17,6 +21,7 @@ class Board extends React.Component {
     this.selectName = this.selectName.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.matches = this.matches.bind(this);
+    this.processUsers = this.processUsers.bind(this);
   }
 
   componentWillMount() {
@@ -38,6 +43,35 @@ class Board extends React.Component {
 
   handleInput(event) {
     this.setState({inputVal: event.currentTarget.value});
+  }
+
+  processUsers() {
+    let memberIds = [];
+    let assocIds = [];
+
+    this.props.current_board.members.forEach(member => {
+      memberIds.push(member.member_id);
+      assocIds.push(member.id);
+    });
+
+    let members = [];
+    let nonMembers = [];
+
+    let idx
+    let augmenteduser
+
+    this.props.all_users.forEach(user => {
+      idx = memberIds.indexOf(user.id)
+      if (idx === -1) {
+        nonMembers.push(user);
+      } else {
+        augmenteduser = merge({}, user, {["assoc_id"]: assocIds[idx]});
+        members.push(augmenteduser);
+      }
+    });
+
+    return [members, nonMembers]
+
   }
 
   matches() {
@@ -67,12 +101,25 @@ class Board extends React.Component {
     if (!this.props.current_board) {return (
       <div>loading</div>
     )};
+    let test = this.processUsers();
+    let members = test[0];
+    let nonMembers = test[1];
     let results = this.matches().map((result, i) => {
       return (
         <SearchResultItem
           key={result.id}
           username={result.username}
-          profile_pic={result.image_url}
+          image_url={result.image_url}
+        />
+      );
+    });
+    let registeredMembers = members.map((member, i) => {
+      return (
+        <MemberItem
+          key={member.id}
+          username={member.username}
+          image_url={member.image_url}
+          assoc_id={member.assoc_id}
         />
       );
     });
@@ -80,22 +127,41 @@ class Board extends React.Component {
     if (this.state.dropdown === "open") {
       dropDown = (
         <div className="UsersSearch">
-          <h3>Members</h3>
+          <h3>Manage Members</h3>
           <button onClick={this.toggleDropdown()} className="SearchReturn">
             x
           </button>
-          <input
-            onChange={this.handleInput}
-            value={this.state.inputVal}
-            placeholder='e.g. Valentina Tereshkova'/>
-          <ul className="ResultList">
-              <ReactCSSTransitionGroup
-                transitionName='auto'
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={500}>
-                {results}
-              </ReactCSSTransitionGroup>
-            </ul>
+          <div className="UsersSearchBody">
+            <div className="Members">
+              <h3>current members</h3>
+              <ul className="MembersList">
+                <ReactCSSTransitionGroup
+                  transitionName='auto'
+                  transitionEnterTimeout={500}
+                  transitionLeaveTimeout={500}>
+                  {registeredMembers}
+                </ReactCSSTransitionGroup>
+              </ul>
+            </div>
+            <div className="NonMembers">
+              <h3>add members</h3>
+              <input
+                onChange={this.handleInput}
+                value={this.state.inputVal}
+                placeholder='e.g. Valentina Tereshkova'/>
+              <ul className="ResultList">
+                  <ReactCSSTransitionGroup
+                    transitionName='auto'
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}>
+                    {results}
+                  </ReactCSSTransitionGroup>
+              </ul>
+            </div>
+          </div>
+
+
+
         </div>
         )
     };
@@ -107,7 +173,7 @@ class Board extends React.Component {
         </h2>
 
         <button onClick={this.toggleDropdown()} className="AddMember">
-          Add Members ...
+          Manage Members
         </button>
         {dropDown}
       </div>

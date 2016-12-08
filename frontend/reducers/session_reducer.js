@@ -39,7 +39,6 @@ const SessionReducer = (oldState = defaultState, action) => {
       newState = merge({}, oldState, {["current_board"]: action.board});
       newState.current_board.lists = action.board.lists;
       return newState;
-    //Lists
     default:
       return oldState;
   }

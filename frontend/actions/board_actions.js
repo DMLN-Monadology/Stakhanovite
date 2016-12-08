@@ -55,3 +55,17 @@ export const receiveUsersSearches = (users) => ({
   type: RECEIVE_USERS_SEARCHES,
   users
 });
+
+export const CREATE_MEMBERSHIP = "CREATE_MEMBERSHIP";
+
+export const createMembership = (membership) => ({
+  type: CREATE_MEMBERSHIP,
+  membership
+});
+
+export const DELETE_MEMBERSHIP = "DELETE_MEMBERSHIP";
+
+export const deleteMembership = (id) => ({
+  type: DELETE_MEMBERSHIP,
+  id
+});

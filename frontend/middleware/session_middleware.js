@@ -15,7 +15,9 @@ import { CREATE_BOARD,
          receiveUsersSearches,
          receiveBoard,
          receiveBoardShow,
-         receiveCurrentBoard
+         receiveCurrentBoard,
+         CREATE_MEMBERSHIP,
+         DELETE_MEMBERSHIP
 } from '../actions/board_actions';
 
 import { CREATE_LIST,
@@ -29,7 +31,12 @@ import { CREATE_CARD,
 
 //api utilities
 import { signin, signup, signout } from '../util/session_api_util';
-import { createBoard, fetchBoard, fetchUsersSearches } from '../util/board_api_util';
+import { createBoard,
+         fetchBoard,
+         fetchUsersSearches,
+         createMembership,
+         deleteMembership
+       } from '../util/board_api_util';
 import { createList, restructureList } from '../util/list_api_util';
 import { createCard, restructureCard  } from '../util/card_api_util';
 
@@ -83,6 +90,13 @@ const SessionMiddleware = store => next => action => {
       return next(action);
     case RESTRUCTURE_CARD:
       restructureCard(action.card, boardShowSuccessCallback, testErrorCB);
+      return next(action);
+    // GLASNOST
+    case CREATE_MEMBERSHIP:
+      createMembership(action.membership, boardShowSuccessCallback);
+      return next(action);
+    case DELETE_MEMBERSHIP:
+      deleteMembership(action.id, boardShowSuccessCallback);
       return next(action);
     default:
       return next(action);

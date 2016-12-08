@@ -1,16 +1,18 @@
-require 'byebug'
 
 class Api::BoardmembershipsController < ApplicationController
 
   def create
     @membership = BoardMembership.new(board_membership_params)
     @membership.save
+    @board = @membership.board
+    render "api/boards/show"
   end
 
   def destroy
     @membership = BoardMembership.find(params[:id])
     @membership.destroy
-
+    @board = @membership.board
+    render "api/boards/show"
   end
 
   private

@@ -43,17 +43,19 @@ export const fetchUsersSearches = (success) => {
   });
 };
 
-export const createMembership = (boardmembership) => {
+export const createMembership = (boardmembership, success) => {
   $.ajax ({
     url: 'api/boardmemberships',
     method: "POST",
-    data: { boardmembership }
+    data: { boardmembership },
+    success
   })
 }
 
-export const deleteMembership = (id) => {
+export const deleteMembership = (id, success) => {
   $.ajax ({
     url: `api/boardmemberships/${id}`,
-    method: "DELETE"
+    method: "DELETE",
+    success
   })
 }

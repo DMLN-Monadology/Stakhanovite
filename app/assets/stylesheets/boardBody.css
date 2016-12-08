@@ -24,13 +24,28 @@
   right: 9px;
   top: 45px;
   height: 400px;
-  width: 300px;
+  width: 700px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding-left: 10px;
+  overflow: hidden;
+}
+
+.UsersSearchBody {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Members {
+  width: 50%;
+}
+
+.NonMembers {
+  width: 50%;
 }
 
 .UsersSearch input {
@@ -39,8 +54,8 @@
 
 .ResultList {
   height: 340px;
-  width: 290px;
-
+  width: 330px;
+  padding-left: 30px;
   overflow-y: auto;
 }
 

@@ -7,5 +7,7 @@ json.lists do
 end
 
 json.members do
-  json.array!(board.members) 
+  json.array!(board.memberships) do |membership|
+    json.extract! membership, :id, :member_id
+  end
 end
