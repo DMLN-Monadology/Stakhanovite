@@ -25,7 +25,19 @@ class BoardsIndex extends React.Component {
             {this.props.children}
           </ul>
         </div>
-
+        <h2 className="BoardsIndexHeader">Your Groups' Boards</h2>
+          <div className="BoardsIndexBody">
+            <ul>
+              {
+                this.props.currentUser.member_boards.map( board => (
+                  <BoardIndexItem
+                    key={board.id}
+                    board={board}
+                    />
+                ))
+              }
+            </ul>
+          </div>
       </div>
     )
   }

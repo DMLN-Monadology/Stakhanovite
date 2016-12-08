@@ -62,7 +62,9 @@ class Board extends React.Component {
 
     this.props.all_users.forEach(user => {
       idx = memberIds.indexOf(user.id)
-      if ((idx === -1) && (idx !== this.props.current_user_id)) {
+      if (user.id === this.props.current_user_id) {
+        return;
+      } else if (idx === -1) {
         nonMembers.push(user);
       } else {
         augmentedUser = merge({}, user, {["assoc_id"]: assocIds[idx]});
@@ -104,8 +106,6 @@ class Board extends React.Component {
     let test = this.processUsers();
     let members = test[0];
     let nonMembers = test[1];
-    console.log(this.props.current_board.members.length);
-    console.log(members);
     let results = this.matches(nonMembers).map((result, i) => {
       return (
         <SearchResultItem
@@ -133,6 +133,7 @@ class Board extends React.Component {
     if (this.state.dropdown === "open") {
       dropDown = (
         <div className="UsersSearch">
+          <h3>Owner: {this.props.current_board.owner.username}</h3>
           <h3>Manage Members</h3>
           <button onClick={this.toggleDropdown()} className="SearchReturn">
             x
