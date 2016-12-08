@@ -10,8 +10,8 @@ class Api::BoardmembershipsController < ApplicationController
 
   def destroy
     @membership = BoardMembership.find(params[:id])
-    @membership.destroy
     @board = @membership.board
+    @membership.destroy
     render "api/boards/show"
   end
 

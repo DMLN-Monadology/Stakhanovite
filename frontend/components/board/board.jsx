@@ -58,15 +58,15 @@ class Board extends React.Component {
     let nonMembers = [];
 
     let idx
-    let augmenteduser
+    let augmentedUser
 
     this.props.all_users.forEach(user => {
       idx = memberIds.indexOf(user.id)
-      if (idx === -1) {
+      if ((idx === -1) && (idx !== this.props.current_user_id)) {
         nonMembers.push(user);
       } else {
-        augmenteduser = merge({}, user, {["assoc_id"]: assocIds[idx]});
-        members.push(augmenteduser);
+        augmentedUser = merge({}, user, {["assoc_id"]: assocIds[idx]});
+        members.push(augmentedUser);
       }
     });
 
@@ -74,14 +74,14 @@ class Board extends React.Component {
 
   }
 
-  matches() {
+  matches(nonMembers) {
     const matches = [];
 
     if (this.state.inputVal.length === 0) {
-      return this.props.all_users;
+      return nonMembers;
     }
 
-    this.props.all_users.forEach(user => {
+    nonMembers.forEach(user => {
       let sub = user.username.slice(0, this.state.inputVal.length);
       if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
         matches.push(user);
@@ -104,12 +104,17 @@ class Board extends React.Component {
     let test = this.processUsers();
     let members = test[0];
     let nonMembers = test[1];
-    let results = this.matches().map((result, i) => {
+    console.log(this.props.current_board.members.length);
+    console.log(members);
+    let results = this.matches(nonMembers).map((result, i) => {
       return (
         <SearchResultItem
           key={result.id}
           username={result.username}
           image_url={result.image_url}
+          user_id={result.id}
+          current_board_id={this.props.boardId}
+          createMembership={this.props.createMembership}
         />
       );
     });
@@ -120,6 +125,7 @@ class Board extends React.Component {
           username={member.username}
           image_url={member.image_url}
           assoc_id={member.assoc_id}
+          deleteMembership={this.props.deleteMembership}
         />
       );
     });
@@ -135,12 +141,7 @@ class Board extends React.Component {
             <div className="Members">
               <h3>current members</h3>
               <ul className="MembersList">
-                <ReactCSSTransitionGroup
-                  transitionName='auto'
-                  transitionEnterTimeout={500}
-                  transitionLeaveTimeout={500}>
-                  {registeredMembers}
-                </ReactCSSTransitionGroup>
+                {registeredMembers}
               </ul>
             </div>
             <div className="NonMembers">
@@ -150,18 +151,10 @@ class Board extends React.Component {
                 value={this.state.inputVal}
                 placeholder='e.g. Valentina Tereshkova'/>
               <ul className="ResultList">
-                  <ReactCSSTransitionGroup
-                    transitionName='auto'
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={500}>
-                    {results}
-                  </ReactCSSTransitionGroup>
+                {results}
               </ul>
             </div>
           </div>
-
-
-
         </div>
         )
     };

@@ -8,6 +8,6 @@ end
 
 json.members do
   json.array!(board.memberships) do |membership|
-    json.extract! membership, :id, :member_id
+    json.extract! membership, :id, :member_id, :board_id
   end
 end

@@ -42,6 +42,7 @@
 
 .Members {
   width: 50%;
+  overflow-y: auto;
 }
 
 .NonMembers {

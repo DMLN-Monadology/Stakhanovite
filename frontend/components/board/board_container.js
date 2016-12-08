@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import Board from './board';
-import { fetchBoard, fetchUsersSearches } from '../../actions/board_actions';
+import { fetchBoard,
+         fetchUsersSearches,
+         createMembership,
+         deleteMembership
+       } from '../../actions/board_actions';
 import { createList, restructureList } from '../../actions/list_actions';
 import { createCard, restructureCard } from '../../actions/card_actions';
 
@@ -10,6 +14,7 @@ const mapStateToProps = (state, { params }) => {
     boardId: boardId,
     boards: state.session.currentUser.owned_boards,
     current_board: state.session.current_board,
+    current_user_id: state.session.currentUser.id,
     all_users: state.session.all_users
   };
 };
@@ -20,7 +25,9 @@ const mapDispatchToProps = dispatch => ({
   restructureList: (list) => dispatch(restructureList(list)),
   createCard: (card) => dispatch(createCard(card)),
   restructureCard: (card) => dispatch(restructureCard(card)),
-  fetchUsersSearches: () => dispatch(fetchUsersSearches())
+  fetchUsersSearches: () => dispatch(fetchUsersSearches()),
+  createMembership: (membership) => dispatch(createMembership(membership)),
+  deleteMembership: (id) => dispatch(deleteMembership(id))
 });
 
 export default connect(
