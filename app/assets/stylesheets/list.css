@@ -24,6 +24,7 @@
 
 .List {
   height: 50%;
+  position: relative;
 }
 
 
@@ -115,4 +116,36 @@
 
 .NewListButtonOff:hover {
   color: black;
+}
+
+.editListContainer {
+  position: absolute;
+  top: -16px;
+  right: 8px;
+}
+
+.editList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  color: black;
+  border: black solid 1px;
+  position: absolute;
+  width: 200px;
+  z-index: 1000;
+}
+
+.editList h3 {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: black solid 1px;
+  margin-bottom: 10px;
+}
+
+.CardDDReturn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }

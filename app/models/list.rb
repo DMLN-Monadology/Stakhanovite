@@ -34,4 +34,16 @@ class List < ApplicationRecord
 
   end
 
+  def self.war_perestroika(lists_array, deleted_location)
+    lists_array.delete_at(deleted_location)
+
+    lists_array.each_with_index do |list, idx|
+      list.order = idx
+      list.save
+    end
+
+    lists_array
+
+  end
+
 end

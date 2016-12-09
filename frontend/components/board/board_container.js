@@ -5,8 +5,15 @@ import { fetchBoard,
          createMembership,
          deleteMembership
        } from '../../actions/board_actions';
-import { createList, restructureList } from '../../actions/list_actions';
-import { createCard, restructureCard } from '../../actions/card_actions';
+
+import { createList,
+         restructureList,
+         deleteList
+} from '../../actions/list_actions';
+
+import { createCard,
+         restructureCard
+} from '../../actions/card_actions';
 
 const mapStateToProps = (state, { params }) => {
   const boardId = parseInt(params.boardId);
@@ -23,6 +30,7 @@ const mapDispatchToProps = dispatch => ({
   fetchBoard: (id) => dispatch(fetchBoard(id)),
   createList: (list) => dispatch(createList(list)),
   restructureList: (list) => dispatch(restructureList(list)),
+  deleteList: (id) => dispatch(deleteList(id)),
   createCard: (card) => dispatch(createCard(card)),
   restructureCard: (card) => dispatch(restructureCard(card)),
   fetchUsersSearches: () => dispatch(fetchUsersSearches()),

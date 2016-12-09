@@ -21,24 +21,35 @@ import { CREATE_BOARD,
 } from '../actions/board_actions';
 
 import { CREATE_LIST,
-         RESTRUCTURE_LIST
+         RESTRUCTURE_LIST,
+         DELETE_LIST
 } from '../actions/list_actions';
 
 import { CREATE_CARD,
-         RESTRUCTURE_CARD
+         RESTRUCTURE_CARD,
+         DELETE_CARD
 } from '../actions/card_actions';
 
 
 //api utilities
 import { signin, signup, signout } from '../util/session_api_util';
+
 import { createBoard,
          fetchBoard,
          fetchUsersSearches,
          createMembership,
          deleteMembership
-       } from '../util/board_api_util';
-import { createList, restructureList } from '../util/list_api_util';
-import { createCard, restructureCard  } from '../util/card_api_util';
+} from '../util/board_api_util';
+
+import { createList,
+         restructureList,
+         deleteList
+} from '../util/list_api_util';
+
+import { createCard,
+         restructureCard,
+         deleteCard
+} from '../util/card_api_util';
 
 const SessionMiddleware = store => next => action => {
 
@@ -80,6 +91,9 @@ const SessionMiddleware = store => next => action => {
     // Lists
     case CREATE_LIST:
       createList(action.list, boardShowSuccessCallback, testErrorCB)
+      return next(action);
+    case DELETE_LIST:
+      deleteList(action.id, boardShowSuccessCallback, testErrorCB)
       return next(action);
     case RESTRUCTURE_LIST:
       restructureList(action.list, boardShowSuccessCallback, testErrorCB);

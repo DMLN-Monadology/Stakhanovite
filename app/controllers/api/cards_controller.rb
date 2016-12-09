@@ -40,6 +40,7 @@ class Api::CardsController < ApplicationController
     @card = Card.find(params[:id])
 
     if @card.destroy
+      @board = @card.list.board
       render "api/boards/show"
     else
       render json: @card.errors.full_messages, status: 422

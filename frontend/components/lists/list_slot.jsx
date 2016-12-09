@@ -31,6 +31,7 @@ class ListSlot extends React.Component {
       <div className="ListSlot">
         <ListIndexItem
           list={this.props.list}
+          deleteList={this.props.deleteList}
           createCard={this.props.createCard}
           restructureCard={this.props.restructureCard}
           />

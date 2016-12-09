@@ -18,10 +18,21 @@ function collect(connect, monitor) {
 class ListIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {cardDropdown: "closed"};
+    this.state = {
+      cardDropdown: "closed",
+      editListDropdown: "closed"
+    };
+
+    this.handleSubmitDeleteList = this.handleSubmitDeleteList.bind(this);
+
   }
 
-  toggleDropdown() {
+  handleSubmitDeleteList(event) {
+    event.preventDefault();
+    this.props.deleteList(this.props.list.id)
+  }
+
+  toggleCardDropdown() {
     return (event) => {
       event.preventDefault();
       this.state.cardDropdown === "closed" ?
@@ -30,19 +41,44 @@ class ListIndexItem extends React.Component {
     }
   }
 
+  toggleListDropdown() {
+    return (event) => {
+      event.preventDefault();
+      this.state.editListDropdown === "closed" ?
+      this.setState({ editListDropdown: "open"}) :
+      this.setState({ editListDropdown: "closed"})
+    }
+  }
+
 
   render() {
-    let dropDown;
+    let newCardDD;
     if (this.state.cardDropdown === "open") {
-      dropDown = (
+      newCardDD = (
         <div className="CardFormContainer">
           <CardForm current_list={this.props.list} createCard={this.props.createCard}/>
-          <button onClick={this.toggleDropdown()} className="CardDDReturn">
+          <button onClick={this.toggleCardDropdown()} className="CardDDReturn">
             X
           </button>
         </div>
       )
     };
+
+    let editListDD;
+    if (this.state.editListDropdown === "open") {
+      editListDD = (
+        <div className="editList">
+          <h3>{this.props.list.title}</h3>
+          <button onClick={this.toggleListDropdown()} className="CardDDReturn">
+            X
+          </button>
+          <p onClick={this.handleSubmitDeleteList}
+            className="deleteListButton"
+            >DELETE THIS LIST
+          </p>
+        </div>
+      )
+    }
 
     let placeholder;
     if (this.props.list.cards.length === 0) {
@@ -70,6 +106,10 @@ class ListIndexItem extends React.Component {
     return connectDragSource(
       <div className="List">
         <h3 className="ListTitle">{this.props.list.title}</h3>
+        <div className="editListContainer">
+          <button onClick={this.toggleListDropdown()} className="listDDButton">...</button>
+          {editListDD}
+        </div>
 
         {
           this.props.list.cards.map( card => (
@@ -92,10 +132,10 @@ class ListIndexItem extends React.Component {
 
         <br/>
         <div className="CardFormDD">
-          <button onClick={this.toggleDropdown()} className="CardDDButton">
+          <button onClick={this.toggleCardDropdown()} className="CardDDButton">
             Add a card...
           </button>
-          {dropDown}
+          {newCardDD}
         </div>
 
       </div>

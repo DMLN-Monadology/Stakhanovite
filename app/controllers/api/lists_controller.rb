@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::ListsController < ApplicationController
 
   def create
@@ -25,15 +27,17 @@ class Api::ListsController < ApplicationController
     render 'api/boards/show'
   end
 
-
   def destroy
     @list = List.find(params[:id])
 
-    if @list.destroy
-      render  'api/boards/show'
-    else
-      render json: @board.errors.full_messages, status: 422
-    end
+    lists_array = @list.board.lists.to_a.sort_by { |list| list.order }
+    deleted_location = @list.order
+    List.war_perestroika(lists_array, deleted_location)
+
+    @list.destroy
+    @board = @list.board
+    @board.lists.delete(@list)
+    render  'api/boards/show'
   end
 
 

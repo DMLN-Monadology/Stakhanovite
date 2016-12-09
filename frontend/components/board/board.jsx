@@ -180,6 +180,7 @@ class Board extends React.Component {
                 list={list}
                 order={list.order}
                 restructureList={this.props.restructureList}
+                deleteList={this.props.deleteList}
                 createCard={this.props.createCard}
                 restructureCard={this.props.restructureCard}
                 />
