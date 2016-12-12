@@ -88,6 +88,7 @@ class ListIndexItem extends React.Component {
           listId={this.props.list.id}
           order={this.props.list.cards.length}
           restructureCard={this.props.restructureCard}
+          deleteCard={this.props.deleteCard}
         />
       )
     } else {

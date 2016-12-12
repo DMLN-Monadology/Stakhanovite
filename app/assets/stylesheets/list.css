@@ -118,9 +118,9 @@
   color: black;
 }
 
-.editListContainer {
+.listDDButton {
   position: absolute;
-  top: -16px;
+  top: -8px;
   right: 8px;
 }
 
@@ -132,6 +132,8 @@
   color: black;
   border: black solid 1px;
   position: absolute;
+  top: 0px;
+  right: -200px;
   width: 200px;
   z-index: 1000;
 }

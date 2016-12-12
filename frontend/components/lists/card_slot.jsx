@@ -34,6 +34,7 @@ class CardSlot extends React.Component {
       <div className="CardSlot">
         <CardIndexItem
           card={this.props.card}
+          deleteCard={this.props.deleteCard}
           />
       </div>
     )

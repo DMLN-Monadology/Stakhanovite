@@ -12,7 +12,8 @@ import { createList,
 } from '../../actions/list_actions';
 
 import { createCard,
-         restructureCard
+         restructureCard,
+         deleteCard
 } from '../../actions/card_actions';
 
 const mapStateToProps = (state, { params }) => {
@@ -33,6 +34,7 @@ const mapDispatchToProps = dispatch => ({
   deleteList: (id) => dispatch(deleteList(id)),
   createCard: (card) => dispatch(createCard(card)),
   restructureCard: (card) => dispatch(restructureCard(card)),
+  deleteCard: (id) => dispatch(deleteCard(id)),
   fetchUsersSearches: () => dispatch(fetchUsersSearches()),
   createMembership: (membership) => dispatch(createMembership(membership)),
   deleteMembership: (id) => dispatch(deleteMembership(id))

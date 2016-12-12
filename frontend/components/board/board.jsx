@@ -183,6 +183,7 @@ class Board extends React.Component {
                 deleteList={this.props.deleteList}
                 createCard={this.props.createCard}
                 restructureCard={this.props.restructureCard}
+                deleteCard={this.props.deleteCard}
                 />
             ))
           }

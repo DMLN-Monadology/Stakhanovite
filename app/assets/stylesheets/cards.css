@@ -9,6 +9,7 @@
 
 
 .Card {
+  position: relative;
   color: black;
   background: white;
   max-width: 240px;
@@ -17,11 +18,29 @@
   padding: 8px;
   border-radius: 5px;
   white-space: normal;
+}
+
+.CardTitle {
   overflow: auto;
+}
+
+.cardDDButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.editCard {
+  max-width: 200px;
+  position: absolute;
+  z-index: 10000;
+  top: 10px;
+  right: -200px;
+  background-color: white;
 }
 
 
 .placeholder {
   background: none;
-  height: 20px;
+  height: 40px;
 }

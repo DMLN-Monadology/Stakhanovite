@@ -105,6 +105,9 @@ const SessionMiddleware = store => next => action => {
     case RESTRUCTURE_CARD:
       restructureCard(action.card, boardShowSuccessCallback, testErrorCB);
       return next(action);
+    case DELETE_CARD:
+      deleteCard(action.id, boardShowSuccessCallback, testErrorCB);
+      return next(action);
     // GLASNOST
     case CREATE_MEMBERSHIP:
       createMembership(action.membership, boardShowSuccessCallback);

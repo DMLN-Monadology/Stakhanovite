@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Api::ListsController < ApplicationController
 
   def create
