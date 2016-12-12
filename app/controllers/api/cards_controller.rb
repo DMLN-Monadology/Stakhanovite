@@ -39,12 +39,17 @@ class Api::CardsController < ApplicationController
   def destroy
     @card = Card.find(params[:id])
 
-    if @card.destroy
-      @board = @card.list.board
-      render "api/boards/show"
-    else
-      render json: @card.errors.full_messages, status: 422
-    end
+    cards_array = @card.list.cards.to_a.sort_by { |card| card.order }
+    deleted_location = @card.order
+    Card.war_perestroika(cards_array, deleted_location)
+
+    @card.destroy
+    # @list = @card.list
+    @board = @card.list.board
+    # debugger
+    # @board.lists[@list.order].cards.delete(@card)
+    render 'api/boards/show'
+
   end
 
   private

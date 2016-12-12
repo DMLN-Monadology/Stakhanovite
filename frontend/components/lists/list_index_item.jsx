@@ -22,7 +22,6 @@ class ListIndexItem extends React.Component {
       cardDropdown: "closed",
       editListDropdown: "closed"
     };
-
     this.handleSubmitDeleteList = this.handleSubmitDeleteList.bind(this);
 
   }
@@ -80,28 +79,6 @@ class ListIndexItem extends React.Component {
       )
     }
 
-    let placeholder;
-    if (this.props.list.cards.length === 0) {
-      placeholder = (
-        <CardSlot
-          card="placeholder"
-          listId={this.props.list.id}
-          order={this.props.list.cards.length}
-          restructureCard={this.props.restructureCard}
-          deleteCard={this.props.deleteCard}
-        />
-      )
-    } else {
-      placeholder = (
-        <CardSlot
-          card="placeholder"
-          listId={this.props.list.id}
-          order={this.props.list.cards.length - 1}
-          restructureCard={this.props.restructureCard}
-        />
-      )
-    }
-
     const connectDragSource = this.props.connectDragSource;
 
     return connectDragSource(
@@ -120,6 +97,7 @@ class ListIndexItem extends React.Component {
               listId={card.list_id}
               order={card.order}
               restructureCard={this.props.restructureCard}
+              deleteCard={this.props.deleteCard}
               />
           ))
         }

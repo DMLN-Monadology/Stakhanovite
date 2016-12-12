@@ -20,7 +20,6 @@ class CardIndexItem extends React.Component {
     this.state = {
       editCardDropdown: "closed"
     };
-
     this.handleSubmitDeleteCard = this.handleSubmitDeleteCard.bind(this);
   }
 
@@ -49,7 +48,7 @@ class CardIndexItem extends React.Component {
           <button onClick={this.toggleCardDropdown()} className="CardDDReturn">
             X
           </button>
-          <p onClick={this.handleSubmitDeleteList}
+          <p onClick={this.handleSubmitDeleteCard}
             className="deleteCardButton"
             >DELETE THIS CARD
           </p>

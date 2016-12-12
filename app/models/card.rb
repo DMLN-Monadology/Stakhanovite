@@ -44,4 +44,16 @@ class Card < ApplicationRecord
     arrival_list
 
   end
+
+  def self.war_perestroika(cards_array, deleted_location)
+    cards_array.delete_at(deleted_location)
+
+    cards_array.each_with_index do |card, idx|
+      card.order = idx
+      card.save
+    end
+
+    cards_array
+
+  end
 end
