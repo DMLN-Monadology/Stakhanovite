@@ -34,7 +34,7 @@ class BoardIndexItem extends React.Component {
       deleteBoardDD = (
         <div className="BoardDD">
           <h3>Board Options</h3>
-          <button onClick={this.toggleBoardDropdown()} className="BoardDDReturn">X</button>
+          <p onClick={this.toggleBoardDropdown()} className="BoardDDReturn">X</p>
           <p onClick={this.handleSubmit} className="deleteBoardButton">
             DELETE THIS BOARD
           </p>
