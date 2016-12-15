@@ -39,20 +39,37 @@
   position: absolute;
   color: white;
   padding: 5%;
+  padding-right: 8%;
   height: 76%;
-  width: 90%;
+  width: 88%;
   overflow: auto;
+  font-size: 22px;
 }
 
-.BoardIndexItem button {
-  z-index: 1000;
+.BoardDDButton {
+  display: none;
+  z-index: 100;
   position: absolute;
-  top: 5px;
-  right: -10px;
+  top: 2px;
+  right: 2px;
+  text-align: center;
+  height: 14px;
+  width: 22px;
+  font-size: 12px;
+  line-height: 7px;
+  border-radius: 1px;
+}
+
+.BoardDDButton:hover {
+  background-color: #1365FF;
 }
 
 .BoardIndexItem:hover {
   background-color: #004076
+}
+
+.BoardIndexItem:hover > .BoardDDButton {
+  display: block;
 }
 
 .NewBoardIndexItem  {
