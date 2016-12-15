@@ -12,6 +12,7 @@ import {SIGN_IN,
 import { CREATE_BOARD,
          FETCH_BOARD,
          FETCH_USERS_SEARCHES,
+         DELETE_BOARD,
          receiveUsersSearches,
          receiveBoard,
          receiveBoardShow,
@@ -35,6 +36,7 @@ import { CREATE_CARD,
 import { signin, signup, signout } from '../util/session_api_util';
 
 import { createBoard,
+         deleteBoard,
          fetchBoard,
          fetchUsersSearches,
          createMembership,
@@ -84,6 +86,9 @@ const SessionMiddleware = store => next => action => {
       return next(action);
     case CREATE_BOARD:
       createBoard(action.board, boardSuccessCallback, testErrorCB)
+      return next(action);
+    case DELETE_BOARD:
+      deleteBoard(action.id, userSuccessCallback, testErrorCB)
       return next(action);
     case FETCH_BOARD:
       fetchBoard(action.id, boardShowSuccessCallback);

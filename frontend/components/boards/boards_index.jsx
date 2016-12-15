@@ -6,7 +6,9 @@ import { Link, hashHistory } from 'react-router';
 class BoardsIndex extends React.Component {
   constructor(props) {
     super(props);
+
   }
+
 
   render () {
     return (
@@ -19,6 +21,8 @@ class BoardsIndex extends React.Component {
                 <BoardIndexItem
                   key={board.id}
                   board={board}
+                  owned="true"
+                  deleteBoard={this.props.deleteBoard}
                   />
               ))
             }
@@ -33,6 +37,7 @@ class BoardsIndex extends React.Component {
                   <BoardIndexItem
                     key={board.id}
                     board={board}
+                    owned="false"
                     />
                 ))
               }

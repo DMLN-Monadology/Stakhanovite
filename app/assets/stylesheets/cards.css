@@ -22,6 +22,8 @@
 
 .CardTitle {
   overflow: auto;
+  max-height: 200px;
+  padding: 5px;
 }
 
 .cardDDButton {

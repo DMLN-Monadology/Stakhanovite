@@ -27,7 +27,8 @@ class Api::BoardsController < ApplicationController
     @board = Board.find(params[:id])
 
     if @board.destroy
-      render "api/boards/show"
+      @user = @board.owner
+      render "api/users/show"
     else
       render json: @board.errors.full_messages, status: 422
     end

@@ -5,7 +5,6 @@
 
 }
 
-
 .BoardsIndexBody ul {
   display: flex;
   flex-direction: row;
@@ -34,15 +33,22 @@
   margin-bottom: 2%;
   cursor: pointer;
   transition: background-color 0.5s ease;
-  padding: 0px 0% 0% 0px;
 }
 
 .BoardIndexItem a {
   position: absolute;
   color: white;
   padding: 5%;
-  height: 90%;
+  height: 76%;
   width: 90%;
+  overflow: auto;
+}
+
+.BoardIndexItem button {
+  z-index: 1000;
+  position: absolute;
+  top: 5px;
+  right: -10px;
 }
 
 .BoardIndexItem:hover {
