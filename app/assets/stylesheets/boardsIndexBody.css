@@ -55,13 +55,15 @@
   text-align: center;
   height: 14px;
   width: 22px;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 7px;
   border-radius: 1px;
 }
 
 .BoardDDButton:hover {
-  background-color: #1365FF;
+  text-shadow: 1px 1px 1px grey;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .BoardIndexItem:hover {
@@ -119,7 +121,7 @@
   text-align: center;
   height: 14px;
   width: 22px;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 12px;
   border-radius: 1px;
   font-weight: 200;

@@ -166,9 +166,9 @@
   min-width: 200px;
   min-height: 80px;
   z-index: 1000;
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: white;
-  border: solid 1px grey;
+  border: solid 3px grey;
 }
 
 .editList h3 {

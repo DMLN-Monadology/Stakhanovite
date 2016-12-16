@@ -44,10 +44,10 @@ class CardIndexItem extends React.Component {
     if ((this.state.editCardDropdown === "open") & (this.props.card != 'placeholder')) {
       editCardDD = (
         <div className="editCard">
-          <h3>{this.props.card.title}</h3>
-          <button onClick={this.toggleCardDropdown()} className="CardDDReturn">
+          <h3>Card Options</h3>
+          <p onClick={this.toggleCardDropdown()} className="CardDDReturn">
             X
-          </button>
+          </p>
           <p onClick={this.handleSubmitDeleteCard}
             className="deleteCardButton"
             >DELETE THIS CARD
