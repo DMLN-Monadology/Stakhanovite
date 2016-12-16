@@ -59,8 +59,8 @@ class CardIndexItem extends React.Component {
     let button
     if (this.props.card != 'placeholder') {
       button = (
-        <button onClick={this.toggleCardDropdown()}
-          className="cardDDButton">...</button>
+        <p onClick={this.toggleCardDropdown()}
+          className="cardDDButton">...</p>
       )
     }
     return connectDragSource(
