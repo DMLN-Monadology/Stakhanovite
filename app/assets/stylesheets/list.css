@@ -122,6 +122,33 @@
   position: absolute;
   top: -8px;
   right: 8px;
+  text-align: center;
+  border-radius: 1px;
+  width: 30px;
+  height: 24px;
+  line-height: 12px;
+  color: black;
+}
+
+.listDDButton:hover {
+  background-color: #C6C9C9;
+}
+
+.ListDDReturn {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  text-align: center;
+  height: 14px;
+  width: 22px;
+  font-size: 12px;
+  line-height: 10px;
+  border-radius: 1px;
+  font-weight: 200;
+}
+
+.ListDDReturn:hover {
+  font-weight: bold;
 }
 
 .editList {
@@ -130,12 +157,15 @@
   align-items: center;
   background: white;
   color: black;
-  border: black solid 1px;
   position: absolute;
   top: 0px;
   right: -200px;
-  width: 200px;
+  min-width: 200px;
+  min-height: 80px;
   z-index: 1000;
+  border-radius: 2px;
+  background-color: white;
+  border: solid 1px grey;
 }
 
 .editList h3 {
@@ -144,10 +174,22 @@
   margin-right: 10px;
   border-bottom: black solid 1px;
   margin-bottom: 10px;
+  margin-top: 10px;
+  min-width: 150px;
+  font-size: 14px;
+  padding-bottom: 5px;
 }
 
-.CardDDReturn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+.deleteListButton {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 12px;
+}
+
+.deleteListButton:hover {
+  background: red;
+  color: white;
 }

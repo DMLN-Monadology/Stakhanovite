@@ -104,7 +104,7 @@
   width: 100%;
   text-align: center;
   color: white;
-  text-shadow: 1px 1px 1px red; 
+  text-shadow: 1px 1px 1px red;
 }
 
 .deleteBoardButton:hover {
@@ -125,6 +125,9 @@
   font-weight: 200;
 }
 
+.BoardDDReturn:hover {
+  font-weight: normal;
+}
 
 .NewBoardIndexItem  {
   min-height: 80px;

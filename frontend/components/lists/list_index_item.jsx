@@ -67,10 +67,10 @@ class ListIndexItem extends React.Component {
     if (this.state.editListDropdown === "open") {
       editListDD = (
         <div className="editList">
-          <h3>{this.props.list.title}</h3>
-          <button onClick={this.toggleListDropdown()} className="CardDDReturn">
+          <h3>List Options</h3>
+          <p onClick={this.toggleListDropdown()} className="ListDDReturn">
             X
-          </button>
+          </p>
           <p onClick={this.handleSubmitDeleteList}
             className="deleteListButton"
             >DELETE THIS LIST
@@ -85,7 +85,7 @@ class ListIndexItem extends React.Component {
       <div className="List">
         <h3 className="ListTitle">{this.props.list.title}</h3>
         <div className="editListContainer">
-          <button onClick={this.toggleListDropdown()} className="listDDButton">...</button>
+          <p onClick={this.toggleListDropdown()} className="listDDButton">...</p>
           {editListDD}
         </div>
 
