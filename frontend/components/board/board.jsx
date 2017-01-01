@@ -15,7 +15,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropdown: "open",
+      dropdown: "closed",
       inputVal: ''
     };
     this.selectName = this.selectName.bind(this);
