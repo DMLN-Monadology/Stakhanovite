@@ -55,9 +55,7 @@ cards_intro_list = List.find_by_title("Please find cards below")
 
 Card.create!(title: "Stakhanovites organizes all of your projects with boards.", list_id: board_intro_list.id, order: 0)
 Card.create!(title: "This web application's name, Stakhanovites, is inspired by Alexey Stakhanov, an exceptionally hardworking miner, and the Stakhanovites movement in the former Soviet Union.", list_id: board_intro_list.id, order: 1)
-Card.create!(title: "Feature coming soon: GLASTNOST. Stakhanovites will soon be able to handle board sharing! allowing for more openness!", list_id: board_intro_list.id, order: 2)
-
-
+Card.create!(title: "Stakhanovites also features GLASNOST, allowing you to add and share boards with others.", list_id: board_intro_list.id, order: 1)
 
 Card.create!(title: "Stakhanovites keep track of your workflows/task groups with lists.", list_id: list_intro_list.id, order: 0)
 Card.create!(title: "There can be many lists inside a board.", list_id: list_intro_list.id, order: 1)
@@ -68,9 +66,6 @@ Card.create!(title: "There can be many cards inside a list.", list_id: cards_int
 Card.create!(title: "Cards may be reordered by a drag and drop operation!", list_id: cards_intro_list.id, order: 2)
 Card.create!(title: "Stakhanovites can also handle card reordering across lists! Try it!", list_id: cards_intro_list.id, order: 3)
 Card.create!(title: "Every great work organization needs a Perestroika now and then!", list_id: cards_intro_list.id, order: 4)
-
-
-
 
 
 Board.create!(title: "Magnitogorsk Construction", owner_id: alexey.id)
