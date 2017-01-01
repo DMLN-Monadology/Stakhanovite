@@ -160,3 +160,17 @@
 .NewBoardIndexItem button:hover {
   background-color: #CFD0D3
 }
+
+.AddMember {
+  color: white;
+  border: none;
+  border-radius: 3px;
+  background-color: #2A75AE;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+}
+
+.AddMember:hover {
+  filter: brightness(120%);;
+}

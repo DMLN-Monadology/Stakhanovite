@@ -14,8 +14,8 @@ class MemberItem extends React.Component {
   render() {
     return (
       <li className="MemberItem">
-        <p>{this.props.username}</p>
         <button onClick={this.handleSubmit}>-</button>
+        <p>{this.props.username}</p>
       </li>
     )
   }

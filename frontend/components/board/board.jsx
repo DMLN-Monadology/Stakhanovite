@@ -15,7 +15,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropdown: "closed",
+      dropdown: "open",
       inputVal: ''
     };
     this.selectName = this.selectName.bind(this);
@@ -133,20 +133,19 @@ class Board extends React.Component {
     if (this.state.dropdown === "open") {
       dropDown = (
         <div className="UsersSearch">
-          <h3>Owner: {this.props.current_board.owner.username}</h3>
-          <h3>Manage Members</h3>
+          <h3 className="ManageMembers">Manage Members</h3>
           <button onClick={this.toggleDropdown()} className="SearchReturn">
             x
           </button>
           <div className="UsersSearchBody">
             <div className="Members">
-              <h3>current members</h3>
+              <h3 className="CurrentMembers">Current Members</h3>
               <ul className="MembersList">
                 {registeredMembers}
               </ul>
             </div>
             <div className="NonMembers">
-              <h3>add members</h3>
+              <h3 className="AddMembers">Add Members</h3>
               <input
                 onChange={this.handleInput}
                 value={this.state.inputVal}
