@@ -44,6 +44,9 @@ gagarin = User.find_by_username("Yuri Gagarin")
 kozhedub = User.find_by_username("Ivan Kozhedub")
 rokossovsky = User.find_by_username("Konstantin Rokossovsky")
 voroshilov = User.find_by_username("Kliment Voroshilov")
+sergei = User.find_by_username("Sergei Korolev")
+dmitri = User.find_by_username("Dmitri Shostakovich")
+
 
 alexey = User.find_by_username("Alexey Stakhanov")
 
@@ -116,7 +119,6 @@ Board.create!(title: "Magnitogorsk Iron and Steel Works", owner_id: alexey.id)
 # -------------------------------
 
 
-dmitri = User.find_by_username("Dmitri Shostakovich")
 
 Board.create!(title: "Shostakovich's Symphonies", owner_id: dmitri.id)
 symphonies = Board.find_by_title("Shostakovich's Symphonies").id
@@ -153,7 +155,6 @@ Card.create!(title: "Dawn of Humanity", list_id: petrograd, order: 3)
 
 # -----------------
 
-sergei = User.find_by_username("Sergei Korolev")
 
 Board.create!(title: "Space Program of the USSR", owner_id: sergei.id)
 space_id = Board.find_by_title("Space Program of the USSR").id
