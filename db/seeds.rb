@@ -39,13 +39,26 @@ User.create!(username: "Alexander Pokryshkin", password: "Guest123", image_url: 
 User.create!(username: "Dmitri Shostakovich", password: "Guest123", image_url: "" )
 User.create!(username: "Sergei Korolev", password: "Guest123", image_url: "" )
 
-
+valentina = User.find_by_username("Valentina Tereshkova")
+gagarin = User.find_by_username("Yuri Gagarin")
+kozhedub = User.find_by_username("Ivan Kozhedub")
+rokossovsky = User.find_by_username("Konstantin Rokossovsky")
+voroshilov = User.find_by_username("Kliment Voroshilov")
 
 alexey = User.find_by_username("Alexey Stakhanov")
 
 Board.create!(title: "This is a Board!", owner_id: alexey.id)
 
 welcome_board = Board.find_by_title("This is a Board!")
+
+BoardMembership.create!(member_id: sergei.id, board_id: welcome_board.id)
+BoardMembership.create!(member_id: gagarin.id, board_id: welcome_board.id)
+BoardMembership.create!(member_id: kozhedub.id, board_id: welcome_board.id)
+BoardMembership.create!(member_id: rokossovsky.id, board_id: welcome_board.id)
+BoardMembership.create!(member_id: valentina.id, board_id: welcome_board.id)
+BoardMembership.create!(member_id: voroshilov.id, board_id: welcome_board.id)
+
+
 
 List.create!(title: "You are in a Board!", board_id: welcome_board.id, order: 0)
 List.create!(title: "This is a List", board_id: welcome_board.id, order: 1)
@@ -109,6 +122,9 @@ Board.create!(title: "Shostakovich's Symphonies", owner_id: dmitri.id)
 symphonies = Board.find_by_title("Shostakovich's Symphonies").id
 
 BoardMembership.create!(member_id: alexey.id, board_id: symphonies)
+BoardMembership.create!(member_id: kozhedub.id, board_id: symphonies)
+BoardMembership.create!(member_id: rokossovsky.id, board_id: symphonies)
+BoardMembership.create!(member_id: sergei.id, board_id: symphonies)
 
 
 List.create!(title:"No. 2 To October", board_id:symphonies, order: 0)
@@ -143,6 +159,9 @@ Board.create!(title: "Space Program of the USSR", owner_id: sergei.id)
 space_id = Board.find_by_title("Space Program of the USSR").id
 
 BoardMembership.create!(member_id: alexey.id, board_id: space_id)
+BoardMembership.create!(member_id: dmitri.id, board_id: space_id)
+BoardMembership.create!(member_id: valentina.id, board_id: space_id)
+BoardMembership.create!(member_id: gagarin.id, board_id: space_id)
 
 List.create!(title:"Rocketry & Aviation", board_id:space_id, order: 0)
 List.create!(title:"Test Subjects", board_id:space_id, order: 1)
