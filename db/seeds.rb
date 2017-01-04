@@ -36,6 +36,8 @@ User.create!(username: "Nikolai Kuznetsov", password: "Guest123", image_url: "" 
 User.create!(username: "Zhambyl Tulaev", password: "Guest123", image_url: "" )
 User.create!(username: "Anna Yegorova", password: "Guest123", image_url: "" )
 User.create!(username: "Alexander Pokryshkin", password: "Guest123", image_url: "" )
+User.create!(username: "Dmitri Shostakovich", password: "Guest123", image_url: "" )
+User.create!(username: "Sergei Korolev", password: "Guest123", image_url: "" )
 
 
 
@@ -96,8 +98,70 @@ Card.create!(title: "Sector B Iron Elevator", list_id: completed_construction_li
 Card.create!(title: "Administrative Building #1", list_id: completed_construction_list_id, order: 5)
 
 
-
-
-
-
 Board.create!(title: "Magnitogorsk Iron and Steel Works", owner_id: alexey.id)
+
+# -------------------------------
+
+
+dmitri = User.find_by_username("Dmitri Shostakovich")
+
+Board.create!(title: "Shostakovich's Symphonies", owner_id: dmitri.id)
+symphonies = Board.find_by_title("Shostakovich's Symphonies").id
+
+BoardMembership.create!(member_id: alexey.id, board_id: symphonies)
+
+
+List.create!(title:"No. 2 To October", board_id:symphonies, order: 0)
+List.create!(title:"No. 7 Leningrad", board_id:symphonies, order: 1)
+List.create!(title:"No. 12 The Year of 1917", board_id:symphonies, order: 2)
+
+october_id = List.find_by_title("No. 2 To October").id
+leningrad = List.find_by_title("No. 7 Leningrad").id
+petrograd = List.find_by_title("No. 12 The Year of 1917").id
+
+Card.create!(title: "Largo", list_id: october_id, order: 0)
+Card.create!(title: "Quarter note=152", list_id: october_id, order: 1)
+Card.create!(title: "Poco meno mosso. Allegro molto", list_id: october_id, order: 2)
+Card.create!(title: "Chorus: To October", list_id: october_id, order: 3)
+
+Card.create!(title: "Allegretto", list_id: leningrad, order: 0)
+Card.create!(title: "Moderatto (poco allegretto)", list_id: leningrad, order: 1)
+Card.create!(title: "Adagio", list_id: leningrad, order: 2)
+Card.create!(title: "Allegro non troppo", list_id: leningrad, order: 3)
+
+Card.create!(title: "Revolutionary Petrograd", list_id: petrograd, order: 0)
+Card.create!(title: "Razliv", list_id: petrograd, order: 1)
+Card.create!(title: "Aurora", list_id: petrograd, order: 2)
+Card.create!(title: "Dawn of Humanity", list_id: petrograd, order: 3)
+
+
+# -----------------
+
+sergei = User.find_by_username("Sergei Korolev")
+
+Board.create!(title: "Space Program of the USSR", owner_id: sergei.id)
+space_id = Board.find_by_title("Space Program of the USSR").id
+
+BoardMembership.create!(member_id: alexey.id, board_id: space_id)
+
+List.create!(title:"Rocketry & Aviation", board_id:space_id, order: 0)
+List.create!(title:"Test Subjects", board_id:space_id, order: 1)
+List.create!(title:"Cosmonauts", board_id:space_id, order: 2)
+
+rockets = List.find_by_title("Rocketry & Aviation").id
+subjects = List.find_by_title("Test Subjects").id
+cosmonauts = List.find_by_title("Cosmonauts").id
+
+Card.create!(title: "21/08/1957: First successful test launch of the world's first ICBM, the R-7.", list_id: rockets, order: 0)
+Card.create!(title: "04/10/1957: Successful launch of Sputnik 1.", list_id: rockets, order: 1)
+Card.create!(title: "12/09/1959: Successful launch of Luna 2 and moon impact.", list_id: rockets, order: 2)
+Card.create!(title: "10/11/1970: Successful launch of Lunokhod 1, world's first space rover.", list_id: rockets, order: 3)
+
+Card.create!(title: "03/11/1957: Successful launch of Sputnik 2. Subject Laika will be forever remembered for making the ultimate sacrifice for science and humanity.", list_id: subjects, order: 0)
+Card.create!(title: "19/08/1960: Successful launch of Sputnik 5. Subjects Strelka and Belka returned safely, and are the first Earth-born beings to return from space flight.", list_id: subjects, order: 1)
+Card.create!(title: "09/03/1961: Successful launch of Korabl-Sputnik 4. Chernushka, mice, frogs, and guinea pig subjects all returned safely.", list_id: subjects, order: 2)
+
+Card.create!(title: "12/04/1961: Stakhanovite Yuri Gagarin becomes first human to travel to outer space in mission Vostok 1. Gagarin returned safely and decorated.", list_id: cosmonauts, order: 0)
+Card.create!(title: "16/06/1963: Stakhanovite Valentina Tereshkova becomes first woman to travel to outerspace aboard mission Vostok 6. Tereshkova returned safely and decorated.", list_id: cosmonauts, order: 1)
+Card.create!(title: "18/03/1965: Stakhanovite Alexey Leonov becomes first human to walk in space for 12 minutes, as part of the Voskhod 2 mission. Leonov and co-pilot Belyayev returned safely and decorated. ", list_id: cosmonauts, order: 2)
+Card.create!(title: "23/04/1967: Hero of USSR Vladimir Komarov wil be forever remembered for making the ultimate sacrifice in the successful launch but unsuccessful landing of mission Soyuz 1. ", list_id: cosmonauts, order: 2)

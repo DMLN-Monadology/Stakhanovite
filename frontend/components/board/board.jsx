@@ -133,6 +133,7 @@ class Board extends React.Component {
     if (this.state.dropdown === "open") {
       dropDown = (
         <div className="UsersSearch">
+          <h3 className="OwnerTitle">Owner: {this.props.current_board.owner.username}</h3>
           <h3 className="ManageMembers">Manage Members</h3>
           <button onClick={this.toggleDropdown()} className="SearchReturn">
             x
