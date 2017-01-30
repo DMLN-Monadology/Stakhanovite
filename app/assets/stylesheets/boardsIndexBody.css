@@ -14,16 +14,16 @@
 }
 
 .BoardsIndexBody li {
-  width: 25%;
+  width: 30%;
   min-width: 180px;
-  max-width: 200px;
+  max-width: 240px;
   position: relative;
   line-height: 20px;
   display: block;
 }
 
 .BoardIndexItem {
-  min-height: 80px;
+  min-height: 100px;
   position: relative;
   display: block;
   color: white;
@@ -58,6 +58,7 @@
   font-size: 18px;
   line-height: 7px;
   border-radius: 1px;
+  font-family: serif;
 }
 
 .BoardDDButton:hover {

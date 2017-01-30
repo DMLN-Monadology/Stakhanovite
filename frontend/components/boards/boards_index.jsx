@@ -12,6 +12,7 @@ class BoardsIndex extends React.Component {
 
   render () {
     return (
+    <div className="Wrapper">
       <div className="BoardsIndex">
         <h2 className="BoardsIndexHeader">Your Boards</h2>
         <div className="BoardsIndexBody">
@@ -44,6 +45,7 @@ class BoardsIndex extends React.Component {
             </ul>
           </div>
       </div>
+    </div>
     )
   }
 }

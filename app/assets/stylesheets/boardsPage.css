@@ -1,3 +1,10 @@
 .BoardsIndex {
   margin-top: 50px;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
 }
