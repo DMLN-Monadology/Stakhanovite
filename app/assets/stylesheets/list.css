@@ -133,7 +133,7 @@
 }
 
 .listDDButton:hover {
-  background-color: #C6C9C9;
+  font-size: 32px;
   color: black;
   text-shadow: 1px 1px 1px white;
 }

@@ -1,7 +1,7 @@
 .CardSlot {
   margin-bottom: 10px;
   cursor: pointer;
-  background-color: #FFB6C1;
+  background-color: #D5D8E0;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 10px;
@@ -24,6 +24,8 @@
   overflow: auto;
   max-height: 200px;
   padding: 5px;
+  line-height: 1.2;
+  font-size: 20px;
 }
 
 .cardDDButton {
@@ -46,6 +48,7 @@
 
 .cardDDButton:hover {
   text-shadow: 1px 1px 1px white;
+  font-size: 28px;
   color: black;
 }
 
@@ -110,7 +113,20 @@
   color: white;
 }
 
+.placeholder:before {
+  content: "[↓]";
+}
+
+
 .placeholder {
   background: none;
   height: 40px;
+  border: 1px dotted black;
+  padding: 10px;
+  line-height: 1.3em;
+  border: 2px dashed black;
+  border-radius: 10px;
+  font-weight: normal;
+  text-align: center;
+  color: grey;
 }
